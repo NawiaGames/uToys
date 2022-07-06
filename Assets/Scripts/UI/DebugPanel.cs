@@ -1,18 +1,23 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DebugPanel : MonoBehaviour
 {
-    [SerializeField] private MouseController _mouseController; 
+    [SerializeField] private SelectObjects _selectObjects; 
+    [Header("Scale")]
     [SerializeField] private TextMeshProUGUI _textScale;
-    [SerializeField] private Slider _sliderScale;
-    [SerializeField] private TextMeshProUGUI _textScale;
-    [SerializeField] private Slider _sliderScale;
+    [Header("Scale speed")]
+    [SerializeField] private TextMeshProUGUI _textScaleSpeed;
 
-    public void OnSliderUpSelectObject(float value)
+    public void OnSliderScale(float value)
     {
-        _textScale.text = "Up select object: " + value.ToString("F1"); 
-        _mouseController.MoveSelectedObject.SetPositionY(value);
+        _textScale.text = "Scale: " + value.ToString("F1"); 
+        _selectObjects.SetScale(value);
+    }
+    
+    public void OnSliderScaleSpeed(float value)
+    {
+        _textScaleSpeed.text = "Scale speed: " + value.ToString("F1"); 
+        _selectObjects.SetSpeed(value);
     }
 }
