@@ -21,6 +21,7 @@ public class MoveSelectedObject : MonoBehaviour
         var objectTransform = currentSelectObject.gameObject.transform;
         objectTransform.position =
             new Vector3(objectTransform.position.x, _startPosition.y, objectTransform.position.z);
-
     }
+
+    public void SetPositionY(float value) => _positionY = value; 
 }

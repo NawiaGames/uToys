@@ -8,6 +8,8 @@ public class MouseController : MonoBehaviour
     private SelectObject _currentSelectObject;
     private Raycast _raycast;
     private Vector3 _startPosition;
+    
+    public MoveSelectedObject MoveSelectedObject => _moveSelectedObject;
 
     private void Start()
     {
