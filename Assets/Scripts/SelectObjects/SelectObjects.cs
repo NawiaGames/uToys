@@ -6,6 +6,7 @@ public class SelectObjects : MonoBehaviour
     [SerializeField] private float _scaleEnd = 1.5f;
     [SerializeField] private float _speedScale = 5f;
 
+    
     private void Start()
     {
         SetScaleAndSpeed();

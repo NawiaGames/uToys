@@ -8,8 +8,11 @@ public class SelectObject : MonoBehaviour
     private float _scaleEnd = 1f;
     private float _scaleStart = 1f;
     private float _scaleCurrent;
-    private Collider _collider; 
+    private Collider _collider;
+    private Vector3 _startPosition;
 
+    public Vector3 StartPosition => _startPosition; 
+    
     private void Awake()
     {
         _transform = gameObject.transform;
@@ -19,6 +22,7 @@ public class SelectObject : MonoBehaviour
 
     private void Start()
     {
+        _startPosition = gameObject.transform.position;
         _collider = GetComponent<Collider>(); 
     }
 

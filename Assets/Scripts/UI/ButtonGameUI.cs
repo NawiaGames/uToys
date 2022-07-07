@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonGameUI : MonoBehaviour
 {
@@ -11,4 +12,7 @@ public class ButtonGameUI : MonoBehaviour
         _isOpenDebugMenu = !_isOpenDebugMenu; 
         _panelDebugMenu.SetActive(_isOpenDebugMenu);
     }
+    
+    public void ResetScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 }

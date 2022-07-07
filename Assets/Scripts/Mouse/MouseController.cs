@@ -37,7 +37,7 @@ public class MouseController : MonoBehaviour
     {
         _canPastSelectObject = false;
 
-        if (_currentPlatform != null)
+        if (_currentPlatform != null && _currentPlatform.IsEmpty())
             _currentPlatform.EndPlatform();
 
         _currentPlatform = _raycast.RaycastPlatform();
@@ -73,14 +73,17 @@ public class MouseController : MonoBehaviour
 
     private void ResetObjects()
     {
-        if (_canPastSelectObject)
+        if (_canPastSelectObject && _currentPlatform.IsEmpty())
         {
             _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
+            _currentPlatform.SetIsEmpty(false);
             _currentPlatform = null;
         }
         else
-            _moveSelectedObject.ResetSelectObject(_startPosition);
-        _currentSelectObject.EnableCollider(true);
+        {
+            _moveSelectedObject.StartCoroutineMove(_currentSelectObject.StartPosition);
+            _currentSelectObject.EnableCollider(true);
+        }
         _currentSelectObject = null;
     }
 }
