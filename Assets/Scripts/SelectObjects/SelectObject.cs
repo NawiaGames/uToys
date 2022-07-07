@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SelectObject : MonoBehaviour
@@ -6,13 +7,19 @@ public class SelectObject : MonoBehaviour
     private float _speedScale = 5f;
     private float _scaleEnd = 1f;
     private float _scaleStart = 1f;
-    private float _scaleCurrent; 
+    private float _scaleCurrent;
+    private Collider _collider; 
 
     private void Awake()
     {
         _transform = gameObject.transform;
         _scaleStart = _transform.localScale.x;
         _scaleCurrent = _scaleStart;
+    }
+
+    private void Start()
+    {
+        _collider = GetComponent<Collider>(); 
     }
 
     private void Update()
@@ -28,6 +35,8 @@ public class SelectObject : MonoBehaviour
             _transform.localScale = new Vector3(scale, scale, scale); 
         }
     }
+
+    public void EnableCollider(bool state) => _collider.enabled = state; 
 
     public void SetCurrentScaleEnd() => _scaleCurrent = _scaleEnd;
 
