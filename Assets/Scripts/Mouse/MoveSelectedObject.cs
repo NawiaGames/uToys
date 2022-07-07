@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
 
-public enum  ControllerMove {Scale, MoveUP, MoveUPandFinge}
+public enum  ControllerMove {Scale, MoveUP, MoveUpAndFinger}
 public class MoveSelectedObject : MonoBehaviour
 {
     [SerializeField] private float _positionY = 2f;
     [SerializeField] private float _speedUp = 5f;
+    [SerializeField] private float _distanceTouch = 5f; 
     [SerializeField] private ControllerMove _controllerMove = ControllerMove.Scale; 
     private Camera _camera;
     private int _starScale = 1;
@@ -22,7 +22,8 @@ public class MoveSelectedObject : MonoBehaviour
         var objectTransform = _currentSelectObject.gameObject.transform;
         var positionMouse = Input.mousePosition;
         Vector3 worldMousePosition;
-        
+
+        Vector3 positionMove;
         switch (_controllerMove)
         {
             case ControllerMove.Scale:
@@ -34,11 +35,16 @@ public class MoveSelectedObject : MonoBehaviour
             case ControllerMove.MoveUP:
                 positionMouse.z =  _camera.transform.position.y; 
                 worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
-                var positionMove = new Vector3(worldMousePosition.x, _positionY, worldMousePosition.z);
+                positionMove = new Vector3(worldMousePosition.x, _positionY, worldMousePosition.z);
                 objectTransform.position =
                     Vector3.Lerp(objectTransform.position, positionMove, Time.deltaTime * _speedUp); 
                 break;
-            case ControllerMove.MoveUPandFinge:
+            case ControllerMove.MoveUpAndFinger:
+                positionMouse.z =  _distanceTouch; 
+                worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
+                positionMove = new Vector3(worldMousePosition.x, worldMousePosition.y, worldMousePosition.z);
+                objectTransform.position =
+                    Vector3.Lerp(objectTransform.position, positionMove, Time.deltaTime * _speedUp); 
                 break;
         }
 
