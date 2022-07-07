@@ -16,12 +16,11 @@ public class Raycast
         startPosition = Vector3.zero;
         if(raycastHitInfo.collider == null) return null;
         
-        SelectObject currentSelectObject = null;
+        var currentSelectObject = raycastHitInfo.collider.GetComponentInParent<SelectObject>();
 
-        if (raycastHitInfo.collider.TryGetComponent(out SelectObject selectObject))
+        if (currentSelectObject != null)
         {
-            startPosition = selectObject.gameObject.transform.position;
-            currentSelectObject = selectObject;
+            startPosition = currentSelectObject.gameObject.transform.position;
         }
 
         return currentSelectObject;
@@ -30,15 +29,12 @@ public class Raycast
     public Platform RaycastPlatform()
     {
         var ray = _camera.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out var raycastHitInfo, Mathf.Infinity);
+        Physics.Raycast(ray, out var raycastHitInfo);
         Debug.DrawRay(ray.origin, ray.direction * 1000f);
         if(raycastHitInfo.collider == null) return null;
         
-        if (raycastHitInfo.collider.TryGetComponent(out Platform platform))
-        {
-            return platform; 
-        }
+        var platform = raycastHitInfo.collider.GetComponentInParent<Platform>();
 
-        return null; 
+        return platform; 
     }
 }

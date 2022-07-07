@@ -1,15 +1,9 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Renderer))]
 public class Platform : MonoBehaviour
 {
-    private Renderer _renderer;
+    [SerializeField] private Renderer _renderer;
     private bool _isEmpty = true;
-    
-    private void Start()
-    {
-        _renderer = GetComponent<Renderer>();
-    }
 
     public void StartPlatform()
     {

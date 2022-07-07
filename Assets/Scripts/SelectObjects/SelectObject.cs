@@ -1,14 +1,14 @@
-using System;
 using UnityEngine;
 
 public class SelectObject : MonoBehaviour
 {
+    [SerializeField] private Collider _collider;
+
     private Transform _transform;
     private float _speedScale = 5f;
     private float _scaleEnd = 1f;
     private float _scaleStart = 1f;
     private float _scaleCurrent;
-    private Collider _collider;
     private Vector3 _startPosition;
 
     public Vector3 StartPosition => _startPosition; 
@@ -23,7 +23,6 @@ public class SelectObject : MonoBehaviour
     private void Start()
     {
         _startPosition = gameObject.transform.position;
-        _collider = GetComponent<Collider>(); 
     }
 
     private void Update()
