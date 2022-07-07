@@ -23,7 +23,7 @@ public class MouseController : MonoBehaviour
 
         if (_currentSelectObject != null)
         {
-            _moveSelectedObject.MoveSelectObject(_currentSelectObject);
+            _moveSelectedObject.MoveSelectObject();
         }
     }
 
@@ -32,12 +32,14 @@ public class MouseController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _currentSelectObject = _raycast.StartRaycast(out var _startPosition);
+            if (_currentSelectObject != null)
+                _moveSelectedObject.SetSelectObject(_currentSelectObject);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             if(_currentSelectObject == null) return;
-            _moveSelectedObject.ResetSelectObject(_currentSelectObject, _startPosition);
+            _moveSelectedObject.ResetSelectObject(_startPosition);
             _currentSelectObject = null;
         }
     }

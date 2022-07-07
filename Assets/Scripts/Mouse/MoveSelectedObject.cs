@@ -1,34 +1,57 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
+public enum  ControllerMove {Scale, MoveUP, MoveUPandFinge}
 public class MoveSelectedObject : MonoBehaviour
 {
     [SerializeField] private float _positionY = 2f;
     [SerializeField] private float _speedUp = 5f;
+    [SerializeField] private ControllerMove _controllerMove = ControllerMove.Scale; 
     private Camera _camera;
-    private int _starScale = 1; 
+    private int _starScale = 1;
+    private SelectObject _currentSelectObject;
     
-    public void SetCamera(Camera camera) => _camera = camera; 
+    public void SetCamera(Camera camera) => _camera = camera;
+
+    public void SetSelectObject(SelectObject currentSelectObject) => _currentSelectObject = currentSelectObject;
     
-    public void MoveSelectObject(SelectObject currentSelectObject)
+    public void MoveSelectObject()
     {
-        var objectTransform = currentSelectObject.gameObject.transform;
+        if(_currentSelectObject == null) return;
+
+        var objectTransform = _currentSelectObject.gameObject.transform;
         var positionMouse = Input.mousePosition;
-        positionMouse.z =  _camera.transform.position.y; 
-        var worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
-        objectTransform.position = new Vector3(worldMousePosition.x, currentSelectObject.gameObject.transform.position.y, worldMousePosition.z);
-        currentSelectObject.SetCurrentScaleEnd();
+        Vector3 worldMousePosition;
+        
+        switch (_controllerMove)
+        {
+            case ControllerMove.Scale:
+                positionMouse.z =  _camera.transform.position.y; 
+                worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
+                objectTransform.position = new Vector3(worldMousePosition.x, _currentSelectObject.gameObject.transform.position.y, worldMousePosition.z);
+                _currentSelectObject.SetCurrentScaleEnd();
+                break;
+            case ControllerMove.MoveUP:
+                positionMouse.z =  _camera.transform.position.y; 
+                worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
+                var positionMove = new Vector3(worldMousePosition.x, _positionY, worldMousePosition.z);
+                objectTransform.position =
+                    Vector3.Lerp(objectTransform.position, positionMove, Time.deltaTime * _speedUp); 
+                break;
+            case ControllerMove.MoveUPandFinge:
+                break;
+        }
+
     }
 
-    public void ResetSelectObject(SelectObject currentSelectObject, Vector3 _startPosition)
+    public void ResetSelectObject(Vector3 _startPosition)
     {
-        var objectTransform = currentSelectObject.gameObject.transform;
+        var objectTransform = _currentSelectObject.gameObject.transform;
         objectTransform.position =
             new Vector3(objectTransform.position.x, _startPosition.y, objectTransform.position.z);
-        currentSelectObject.SetCurrentScaleStart();
+        _currentSelectObject.SetCurrentScaleStart();
+        _currentSelectObject = null; 
     }
-
-
 
     public void SetPositionY(float value) => _positionY = value; 
 }

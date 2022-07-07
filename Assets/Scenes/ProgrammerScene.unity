@@ -1219,8 +1219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9dac100ceb7f7845aa18efdebe8ba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positionY: 0
+  _positionY: 2
   _speedUp: 5
+  _controllerMove: 0
 --- !u!1 &965452309
 GameObject:
   m_ObjectHideFlags: 0
