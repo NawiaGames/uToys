@@ -297,10 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9dac100ceb7f7845aa18efdebe8ba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedMove: 5
+  _speedMove: 10
+  _speedDown: 0.5
   _minSpeedDown: 0.1
   _distanceTouch: 8
   _managerUIPanel: {fileID: 1037297304}
+  _ease: 14
 --- !u!114 &1037297304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6473563200370752104, guid: 1ca20f4d1056e3040882809fc890bfa9,
@@ -521,6 +523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859294632942930630, guid: adfe8e23b9bd48249b816617dc1e5e3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5859294632942930631, guid: adfe8e23b9bd48249b816617dc1e5e3d,
         type: 3}
