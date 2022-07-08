@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ManagerUIPanel : MonoBehaviour
 {
-    [SerializeField] private PanelResult _panelResult;
+    [SerializeField] private SummaryScreen summaryScreen;
 
     public void OpenPanelResult(Answer answer)
     {
-        _panelResult.gameObject.SetActive(true);
-        _panelResult.OpenPanel(answer);
+        summaryScreen.gameObject.SetActive(true);
+        summaryScreen.OpenPanel(answer);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum Answer {Fail, Ok, King}
+public enum Answer {Fail, Win, King}
 public class SelectObject : MonoBehaviour
 {
     [SerializeField] private Collider _collider;
