@@ -38,4 +38,11 @@ public class SummaryScreen : MonoBehaviour
     {
         _kingPanel.ActivatePanel();
     }
+
+    public void DeactivateAllPanel()
+    {
+        _failPanel.DeactivatePanel();
+        _winPanel.DeactivatePanel();
+        _kingPanel.DeactivatePanel();
+    }
 }

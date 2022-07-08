@@ -9,7 +9,6 @@ public class MoveSelectedObject : MonoBehaviour
     [SerializeField] private float _distanceTouch = 5f; 
     [SerializeField] private ControllerMove _controllerMove = ControllerMove.Scale; 
     private Camera _camera;
-    private int _starScale = 1;
     private SelectObject _currentSelectObject;
     
     public void SetCamera(Camera camera) => _camera = camera;
@@ -28,12 +27,6 @@ public class MoveSelectedObject : MonoBehaviour
         
         switch (_controllerMove)
         {
-            case ControllerMove.Scale:
-                positionMouse.z =  _camera.transform.position.y; 
-                worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
-                objectTransform.position = new Vector3(worldMousePosition.x, _currentSelectObject.gameObject.transform.position.y, worldMousePosition.z);
-                _currentSelectObject.SetCurrentScaleEnd();
-                break;
             case ControllerMove.MoveUP:
                 positionMouse.z =  _camera.transform.position.y; 
                 worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
@@ -57,7 +50,6 @@ public class MoveSelectedObject : MonoBehaviour
         var objectTransform = _currentSelectObject.gameObject.transform;
         objectTransform.position =
             new Vector3(objectTransform.position.x, _startPosition.y, objectTransform.position.z);
-        _currentSelectObject.SetCurrentScaleStart();
         _currentSelectObject = null; 
     }
 

@@ -76,7 +76,7 @@ public class MouseController : MonoBehaviour
     {
         if (_canPastSelectObject && _currentPlatform.IsEmpty())
         {
-            _managerUIPanel.OpenPanelResult(_currentSelectObject.Answer);
+            _managerUIPanel.OpenPanelSummary(_currentSelectObject.Answer);
             
             _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
             _currentPlatform.SetIsEmpty(false);

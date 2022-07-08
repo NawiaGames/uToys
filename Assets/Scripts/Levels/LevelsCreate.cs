@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LevelsManager : MonoBehaviour
+public class LevelsCreate : MonoBehaviour
 {
     [SerializeField] private Level[] _levels;
 

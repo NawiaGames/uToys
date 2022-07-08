@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea1c93b5b9f4c04dafe305800fd4745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selectObjects: {fileID: 5194445276683853913}
+  _platform: {fileID: 5194445275874571552}
 --- !u!1 &5194445276457030589
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,8 +222,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _scaleEnd: 1.5
-  _speedScale: 5
 --- !u!1001 &2395828223391082968
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class ButtonGameUI : MonoBehaviour
 {
     [SerializeField] private GameObject _panelDebugMenu;
+    [SerializeField] private ManagerUIPanel _managerUIPanel; 
+    [SerializeField] private LevelsLoad _levelsLoad;
 
     private bool _isOpenDebugMenu;
 
@@ -15,4 +17,10 @@ public class ButtonGameUI : MonoBehaviour
     
     public void ResetScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+    [ContextMenu("ResetCurrentLevel")]
+    public void ResetCurrentLevel()
+    {
+        _levelsLoad.ResetCurrentLevel(); 
+        _managerUIPanel.ClosePanelSummary();
+    } 
 }

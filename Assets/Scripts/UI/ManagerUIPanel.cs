@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class ManagerUIPanel : MonoBehaviour
 {
-    [SerializeField] private SummaryScreen summaryScreen;
+    [SerializeField] private SummaryScreen _summaryScreen;
 
-    public void OpenPanelResult(Answer answer)
+    public void OpenPanelSummary(Answer answer)
     {
-        summaryScreen.gameObject.SetActive(true);
-        summaryScreen.OpenPanel(answer);
+        _summaryScreen.gameObject.SetActive(true);
+        _summaryScreen.OpenPanel(answer);
     }
+
+    public void ClosePanelSummary() => _summaryScreen.DeactivateAllPanel(); 
 }
