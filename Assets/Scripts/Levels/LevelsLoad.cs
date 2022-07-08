@@ -22,7 +22,10 @@ public class LevelsLoad : MonoBehaviour
 
     private void ActivateLevel(int index)
     {
-        var levels = _levelsCreate.LevelsContainer; 
+        var levels = _levelsCreate.LevelsContainer;
+
+        if (index >= levels.Length)
+            index = 0; 
         
         for (var i = 0; i < levels.Length; i++)
           levels[i].gameObject.SetActive(i == index);
@@ -32,5 +35,13 @@ public class LevelsLoad : MonoBehaviour
     {
         _levelsCreate.LevelsContainer[_currentLevel].SelectObjects.ResetObject();
         _levelsCreate.LevelsContainer[_currentLevel].Platform.SetIsEmpty(true);
+    }
+
+    
+    public void LoadNextLevel()
+    {
+        _currentLevel += 1;
+        CurrentLevel = _currentLevel;
+        ActivateLevel(_currentLevel);
     }
 }

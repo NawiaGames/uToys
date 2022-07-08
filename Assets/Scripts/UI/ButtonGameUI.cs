@@ -22,5 +22,12 @@ public class ButtonGameUI : MonoBehaviour
     {
         _levelsLoad.ResetCurrentLevel(); 
         _managerUIPanel.ClosePanelSummary();
-    } 
+    }
+
+    [ContextMenu("NextLevel")]
+    public void NextLevel()
+    {
+        _levelsLoad.LoadNextLevel();
+        _managerUIPanel.ClosePanelSummary();
+    }
 }
