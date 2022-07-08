@@ -4,16 +4,12 @@ public class MouseController : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
-    [SerializeField] private ManagerUIPanel _managerUIPanel;
     
     private SelectObject _currentSelectObject;
     private Platform _currentPlatform;
     private Raycast _raycast;
-    private Vector3 _startPosition;
     private bool _canPastSelectObject;
-
-    public MoveSelectedObject MoveSelectedObject => _moveSelectedObject;
-
+    
     private void Start()
     {
         _raycast = new Raycast(_camera);
@@ -67,7 +63,7 @@ public class MouseController : MonoBehaviour
 
     private void TrySetSelectObject()
     {
-        _currentSelectObject = _raycast.StartRaycast(out var _startPosition);
+        _currentSelectObject = _raycast.StartRaycast();
         if (_currentSelectObject != null)
             _moveSelectedObject.SetSelectObject(_currentSelectObject);
     }
@@ -76,9 +72,7 @@ public class MouseController : MonoBehaviour
     {
         if (_canPastSelectObject && _currentPlatform.IsEmpty())
         {
-            _managerUIPanel.OpenPanelSummary(_currentSelectObject.Answer);
-            
-            _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
+            _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position, true);
             _currentPlatform.SetIsEmpty(false);
             _currentPlatform = null;
         }

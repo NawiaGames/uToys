@@ -9,19 +9,13 @@ public class Raycast
         _camera = camera;
     }
     
-    public SelectObject StartRaycast(out Vector3 startPosition)
+    public SelectObject StartRaycast()
     {
         Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out var raycastHitInfo);
 
-        startPosition = Vector3.zero;
         if(raycastHitInfo.collider == null) return null;
         
         var currentSelectObject = raycastHitInfo.collider.GetComponentInParent<SelectObject>();
-
-        if (currentSelectObject != null)
-        {
-            startPosition = currentSelectObject.gameObject.transform.position;
-        }
 
         return currentSelectObject;
     }
