@@ -285,7 +285,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 2109649777}
   _moveSelectedObject: {fileID: 944956723}
-  _managerUIPanel: {fileID: 1037297304}
 --- !u!114 &944956723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,10 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9dac100ceb7f7845aa18efdebe8ba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positionY: 2
-  _speedMove: 10
+  _speedMove: 5
+  _minSpeedDown: 0.1
   _distanceTouch: 8
-  _controllerMove: 2
+  _managerUIPanel: {fileID: 1037297304}
 --- !u!114 &1037297304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6473563200370752104, guid: 1ca20f4d1056e3040882809fc890bfa9,
