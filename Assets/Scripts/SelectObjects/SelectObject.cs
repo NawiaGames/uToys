@@ -1,8 +1,10 @@
 using UnityEngine;
 
+public enum Answer {Fail, Ok, King}
 public class SelectObject : MonoBehaviour
 {
     [SerializeField] private Collider _collider;
+    [SerializeField] private Answer _answer = Answer.Fail; 
 
     private Transform _transform;
     private float _speedScale = 5f;
@@ -11,7 +13,8 @@ public class SelectObject : MonoBehaviour
     private float _scaleCurrent;
     private Vector3 _startPosition;
 
-    public Vector3 StartPosition => _startPosition; 
+    public Vector3 StartPosition => _startPosition;
+    public Answer Answer => _answer; 
     
     private void Awake()
     {
