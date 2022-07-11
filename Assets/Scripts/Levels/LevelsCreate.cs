@@ -3,7 +3,7 @@ using UnityEngine;
 public class LevelsCreate : MonoBehaviour
 {
     [SerializeField] private Level[] _levels;
-    [SerializeField] private ManagerUIPanel _managerUIPanel; 
+    [SerializeField] private ManagerUIPanel _managerUIPanel;
 
     private Level[] _levelsContainer;
 

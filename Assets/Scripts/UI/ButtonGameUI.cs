@@ -33,6 +33,12 @@ public class ButtonGameUI : MonoBehaviour
 
     public void ActivateLevelPanel() => _managerUIPanel.LevelPanel.ActivatePanel();
 
-    public void DeactivateLevelPanel() => _managerUIPanel.LevelPanel.DeactivatePanel(); 
-    
+    public void DeactivateLevelPanel() => _managerUIPanel.LevelPanel.DeactivatePanel();
+
+    public void LoadIndexLevel(int index)
+    {
+        _levelsLoad.LoadIndexLevel(index);
+        DeactivateLevelPanel();
+    }
+
 }

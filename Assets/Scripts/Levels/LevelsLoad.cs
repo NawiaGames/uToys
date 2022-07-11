@@ -7,12 +7,6 @@ public class LevelsLoad : MonoBehaviour
 
     private LevelsCreate _levelsCreate;
     
-    public static int CurrentLevel = 0;
-
-    private void Awake()
-    {
-        CurrentLevel = _currentLevel; 
-    }
 
     private void Start()
     {
@@ -29,6 +23,9 @@ public class LevelsLoad : MonoBehaviour
         
         for (var i = 0; i < levels.Length; i++)
           levels[i].gameObject.SetActive(i == index);
+        
+        _currentLevel = index;
+        ResetCurrentLevel();
     }
 
     public void ResetCurrentLevel()
@@ -40,8 +37,11 @@ public class LevelsLoad : MonoBehaviour
     
     public void LoadNextLevel()
     {
-        _currentLevel += 1;
-        CurrentLevel = _currentLevel;
-        ActivateLevel(_currentLevel);
+        ActivateLevel(_currentLevel + 1);
+    }
+
+    public void LoadIndexLevel(int index)
+    {
+        ActivateLevel(index);
     }
 }
