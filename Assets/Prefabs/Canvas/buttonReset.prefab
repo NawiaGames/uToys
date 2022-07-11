@@ -26,8 +26,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6473563200370752102, guid: 1ca20f4d1056e3040882809fc890bfa9,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2945128843364596699, guid: 9db2896bcb6a2ab46aa7b5c4b69fd91b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -36,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 2945128843364596699, guid: 9db2896bcb6a2ab46aa7b5c4b69fd91b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetCurrentLevel
+      value: DeactivateLevelPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2945128843364596699, guid: 9db2896bcb6a2ab46aa7b5c4b69fd91b,
         type: 3}

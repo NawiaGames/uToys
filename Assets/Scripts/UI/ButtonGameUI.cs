@@ -30,4 +30,9 @@ public class ButtonGameUI : MonoBehaviour
         _levelsLoad.LoadNextLevel();
         _managerUIPanel.ClosePanelSummary();
     }
+
+    public void ActivateLevelPanel() => _managerUIPanel.LevelPanel.ActivatePanel();
+
+    public void DeactivateLevelPanel() => _managerUIPanel.LevelPanel.DeactivatePanel(); 
+    
 }
