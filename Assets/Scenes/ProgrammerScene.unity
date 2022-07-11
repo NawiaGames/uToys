@@ -668,6 +668,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5859294632942930628, guid: adfe8e23b9bd48249b816617dc1e5e3d,
+        type: 3}
+      propertyPath: _managerUIPanel
+      value: 
+      objectReference: {fileID: 1037297304}
     - target: {fileID: 5859294632942930630, guid: adfe8e23b9bd48249b816617dc1e5e3d,
         type: 3}
       propertyPath: m_Name
