@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6473563200370752102}
         m_TargetAssemblyTypeName: ButtonGameUI, Assembly-CSharp
-        m_MethodName: ResetScene
+        m_MethodName: ActivateLevelPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2044,6 +2044,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Levels
       objectReference: {fileID: 0}
+    - target: {fileID: 4656710905142957955, guid: 1cc69c09183741f48b0f88ad63e8fcd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6473563200370752102}
     - target: {fileID: 7848620854493307774, guid: 1cc69c09183741f48b0f88ad63e8fcd5,
         type: 3}
       propertyPath: m_Pivot.x
