@@ -4,6 +4,7 @@ public class MouseController : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
+    [SerializeField] private AnimationController _animationController;
     
     private SelectObject _currentSelectObject;
     private Platform _currentPlatform;
@@ -72,15 +73,26 @@ public class MouseController : MonoBehaviour
     {
         if (_canPastSelectObject && _currentPlatform.IsEmpty())
         {
-            _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position, true);
-            _currentPlatform.SetIsEmpty(false);
-            _currentPlatform = null;
+            SetSelectObjectToPlatform();
         }
         else
         {
-            _moveSelectedObject.StartCoroutineMove(_currentSelectObject.StartPosition);
-            _currentSelectObject.EnableCollider(true);
+            ResetSelectObject();
         }
         _currentSelectObject = null;
+    }
+
+    private void ResetSelectObject()
+    {
+        _moveSelectedObject.StartCoroutineMove(_currentSelectObject.StartPosition);
+        _currentSelectObject.EnableCollider(true);
+    }
+
+    private void SetSelectObjectToPlatform()
+    {
+        _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
+        _animationController.StartAnimationEndLevel(_currentSelectObject);
+        _currentPlatform.SetIsEmpty(false);
+        _currentPlatform = null;
     }
 }

@@ -40,5 +40,4 @@ public class ButtonGameUI : MonoBehaviour
         _levelsLoad.LoadIndexLevel(index);
         DeactivateLevelPanel();
     }
-
 }

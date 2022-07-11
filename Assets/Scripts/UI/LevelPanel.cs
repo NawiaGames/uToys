@@ -1,3 +1,4 @@
+using System;
 using GameLib.UI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,11 +11,17 @@ public class LevelPanel : MonoBehaviour
     [SerializeField] private LevelButton _buttonLevel;
     [SerializeField] private Transform _buttonsLevelTransform;
 
-    private UnityAction _buttonCallback; 
+    private UnityAction _buttonCallback;
+    private int _sizeLevels;
+    private LevelButton[] _levelButtons;
 
     public void InitializePanel(int size)
     {
-        for (var i = 0; i < size; i++)
+        _sizeLevels = size;
+
+        _levelButtons = new LevelButton[_sizeLevels];
+        
+        for (var i = 0; i < _sizeLevels; i++)
         {
             CreateButtonLevel(i);
         }
@@ -27,9 +34,24 @@ public class LevelPanel : MonoBehaviour
         _buttonCallback = null;
         _buttonCallback = () => _buttonGameUI.LoadIndexLevel(index); 
         buttonLevel.Button.onClick.AddListener(_buttonCallback);
+
+        _levelButtons[index] = buttonLevel;
     }
 
     public void ActivatePanel() => _levels.ActivatePanel();
 
-    public void DeactivatePanel() => _levels.DeactivatePanel(); 
+    public void DeactivatePanel() => _levels.DeactivatePanel();
+
+    private void OnDisable()
+    {
+        RemoveAllListenerEvents();
+    }
+
+    private void RemoveAllListenerEvents()
+    {
+        for (var i = 0; i < _sizeLevels; i++)
+        {
+            _levelButtons[i].Button.onClick.RemoveAllListeners();
+        }
+    }
 }
