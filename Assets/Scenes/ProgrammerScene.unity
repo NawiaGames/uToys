@@ -726,6 +726,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3311381567177958811, guid: adfe8e23b9bd48249b816617dc1e5e3d,
+        type: 3}
+      propertyPath: _currentLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5859294632942930628, guid: adfe8e23b9bd48249b816617dc1e5e3d,
         type: 3}
       propertyPath: _managerUIPanel
@@ -920,5 +925,10 @@ PrefabInstance:
       propertyPath: _levelsLoad
       value: 
       objectReference: {fileID: 1502921979}
+    - target: {fileID: 6473563201449763114, guid: 1ca20f4d1056e3040882809fc890bfa9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ca20f4d1056e3040882809fc890bfa9, type: 3}
