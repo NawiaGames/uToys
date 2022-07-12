@@ -1,11 +1,10 @@
-using DG.Tweening;
 using UnityEngine;
-
 
 public class Test : MonoBehaviour
 {
-    private void Start()
+    [SerializeField] private float _speed = 5f; 
+    private void Update()
     {
-        transform.DOMove(new Vector3(0, -10, 0) , 1).SetEase(Ease.InOutSine);
+        transform.position += transform.forward * _speed * Time.deltaTime; 
     }
 }
