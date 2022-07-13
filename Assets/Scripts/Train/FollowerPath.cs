@@ -7,13 +7,14 @@ public class FollowerPath : MonoBehaviour
     [SerializeField] private PathCreator _pathCreator;
     [SerializeField] private float _speed = 5f;
     [SerializeField] private Wagon[] _wagons;
+    [SerializeField] private Wagon _wagonHead; 
     [SerializeField] private FallTrain _fallTrain;
     private float _distanceTravelled;
     private bool _isEndPath;
 
     private void Awake()
     {
-        _fallTrain.SetRigidbodyWagons(_wagons);
+        _fallTrain.SetRigidbodyWagons(_wagons, _wagonHead);
     }
 
     [ContextMenu("StartMove")]
@@ -26,7 +27,7 @@ public class FollowerPath : MonoBehaviour
     private IEnumerator MoveTrain()
     {
         SetStartPositionWagons();
-        yield return new WaitForEndOfFrame();
+        
         while (!_isEndPath)
         {
             MoveWagonsAndHead();
@@ -40,8 +41,8 @@ public class FollowerPath : MonoBehaviour
     {
         foreach (var van in _wagons)
         {
-            van.transform.position = _pathCreator.path.GetPointAtDistance(0, EndOfPathInstruction.Stop);
-            van.transform.rotation = _pathCreator.path.GetRotationAtDistance(0, EndOfPathInstruction.Stop);
+            van.transform.position = _pathCreator.path.GetPointAtDistance(0);
+            van.transform.rotation = _pathCreator.path.GetRotationAtDistance(0);
         }
     }
 
@@ -70,9 +71,10 @@ public class FollowerPath : MonoBehaviour
     {
         _distanceTravelled += _speed * Time.deltaTime;
         var nextPosition = _pathCreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-        
+
         if (transform.position == nextPosition)
             _isEndPath = true;
+
         
         transform.position = nextPosition;
         transform.rotation = _pathCreator.path.GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);

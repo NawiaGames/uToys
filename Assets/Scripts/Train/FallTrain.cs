@@ -27,12 +27,14 @@ public class FallTrain : MonoBehaviour
         }
     }
 
-    public void SetRigidbodyWagons(Wagon[] wagons)
+    public void SetRigidbodyWagons(Wagon[] wagons, Wagon wagonHead)
     {
-        _rigidbodyWagons = new Rigidbody[wagons.Length];
+        _rigidbodyWagons = new Rigidbody[wagons.Length + 1];
         for (var i = 0; i < wagons.Length; i++)
         {
             _rigidbodyWagons[i] = wagons[i].Rigidbody;
         }
+
+        _rigidbodyWagons[wagons.Length] = wagonHead.Rigidbody;
     }
 }
