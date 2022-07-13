@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using PathCreation;
 
 public class FollowerPath : MonoBehaviour
@@ -15,9 +14,14 @@ public class FollowerPath : MonoBehaviour
 
     private void Start()
     {
+        SetStartPositionWagons();
+    }
+
+    private void SetStartPositionWagons()
+    {
         foreach (var van in _followerVans)
         {
-            van.transform.position =  _pathCreator.path.GetPointAtDistance(0, EndOfPathInstruction.Stop);
+            van.transform.position = _pathCreator.path.GetPointAtDistance(0, EndOfPathInstruction.Stop);
             van.transform.rotation = _pathCreator.path.GetRotationAtDistance(0, EndOfPathInstruction.Stop);
         }
     }
