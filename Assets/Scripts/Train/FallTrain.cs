@@ -16,23 +16,14 @@ public class FallTrain : MonoBehaviour
     [ContextMenu("Fall")]
     public void Fall()
     {
-        switch (_variants)
+        foreach (var wagon in _rigidbodyWagons)
         {
-            case FallVariants.TorqueRight:
-                foreach (var wagon in _rigidbodyWagons)
-                {
-                    wagon.AddTorque(-wagon.transform.forward * _forceTorque, ForceMode.VelocityChange);
-                }
+            wagon.isKinematic = false; 
+            
+            if (_variants == FallVariants.TorqueRightAndForceBack)
+                wagon.AddForce(-wagon.transform.forward * _forceBack, ForceMode.VelocityChange);
 
-                break;
-            case FallVariants.TorqueRightAndForceBack:
-                foreach (var wagon in _rigidbodyWagons)
-                {
-                    wagon.AddForce(-wagon.transform.forward * _forceBack, ForceMode.VelocityChange);
-                    wagon.AddTorque(-wagon.transform.forward * _forceTorque, ForceMode.VelocityChange);
-                }
-
-                break;
+            wagon.AddTorque(-wagon.transform.forward * _forceTorque, ForceMode.VelocityChange);
         }
     }
 
