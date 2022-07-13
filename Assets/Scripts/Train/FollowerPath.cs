@@ -6,9 +6,15 @@ public class FollowerPath : MonoBehaviour
 {
     [SerializeField] private PathCreator _pathCreator;
     [SerializeField] private float _speed = 5f;
-    [SerializeField] private FollowerVan[] _followerVans;
+    [SerializeField] private Wagon[] _wagons;
+    [SerializeField] private FallTrain _fallTrain;
     private float _distanceTravelled;
     private bool _isEndPath;
+
+    private void Awake()
+    {
+        _fallTrain.SetRigidbodyWagons(_wagons);
+    }
 
     [ContextMenu("StartMove")]
     public void StartMoveTrain()
@@ -32,7 +38,7 @@ public class FollowerPath : MonoBehaviour
 
     private void SetStartPositionWagons()
     {
-        foreach (var van in _followerVans)
+        foreach (var van in _wagons)
         {
             van.transform.position = _pathCreator.path.GetPointAtDistance(0, EndOfPathInstruction.Stop);
             van.transform.rotation = _pathCreator.path.GetRotationAtDistance(0, EndOfPathInstruction.Stop);
@@ -44,7 +50,7 @@ public class FollowerPath : MonoBehaviour
         var previousPosition = transform.position;
         var previousRotation = transform.rotation;
         
-        foreach (var van in _followerVans)
+        foreach (var van in _wagons)
         {
             var vanTransform = van.transform;
             var tempRotation = vanTransform.rotation;
