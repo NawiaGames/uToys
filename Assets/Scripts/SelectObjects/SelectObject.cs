@@ -11,11 +11,12 @@ public class SelectObject : MonoBehaviour
 {
     [SerializeField] private Collider _collider;
     [SerializeField] private Answer _answer = Answer.Fail;
-
+    [SerializeField] private bool _isPlayPhysics; 
     private Vector3 _startPosition;
 
     public Vector3 StartPosition => _startPosition;
     public Answer Answer => _answer;
+    public bool IsPlayPhysics => _isPlayPhysics; 
 
     private void Awake()
     {

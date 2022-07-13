@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectObject 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8256611064744364792, guid: f659d77d8b5036c44aa88719dbfe7953,
+        type: 3}
+      propertyPath: _isPlayPhysics
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f659d77d8b5036c44aa88719dbfe7953, type: 3}
 --- !u!114 &7725201332004459803 stripped
@@ -153,8 +158,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2009754925871283133, guid: 9be6c18ffc2947b449e53b250e473379, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9be6c18ffc2947b449e53b250e473379, type: 3}
+--- !u!114 &6622333606294892568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5066156608595307735, guid: 9be6c18ffc2947b449e53b250e473379,
+    type: 3}
+  m_PrefabInstance: {fileID: 2137481167593839823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05c70a64f9b4e36a3395635bc98d5e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2977917392677033238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +185,11 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -3243264195439774598, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
+        type: 3}
+      propertyPath: _followerPath
+      value: 
+      objectReference: {fileID: 6622333606294892568}
     - target: {fileID: 263311542202217403, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -543,6 +566,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectObject 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
+        type: 3}
+      propertyPath: _isPlayPhysics
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4, type: 3}
 --- !u!114 &3226187117733074775 stripped
@@ -623,6 +651,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SelectObject 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256611064744364792, guid: 9d60ac7c66888ed4e82580ffff5ca4c8,
+        type: 3}
+      propertyPath: _isPlayPhysics
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d60ac7c66888ed4e82580ffff5ca4c8, type: 3}

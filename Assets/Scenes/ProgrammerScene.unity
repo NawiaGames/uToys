@@ -702,6 +702,11 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 2109649777}
+    - target: {fileID: 2268559781602432770, guid: 5b0045eb48f4a2344acab66b564b7181,
+        type: 3}
+      propertyPath: _levelsCreate
+      value: 
+      objectReference: {fileID: 1502921980}
     - target: {fileID: 2268559781602432771, guid: 5b0045eb48f4a2344acab66b564b7181,
         type: 3}
       propertyPath: _managerUIPanel

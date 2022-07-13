@@ -12,6 +12,9 @@ public class FollowerPath : MonoBehaviour
     private float _distanceTravelled;
     private bool _isEndPath;
 
+    public bool IsEndPath => _isEndPath;
+    public FallTrain FallTrain => _fallTrain; 
+
     private void Awake()
     {
         _fallTrain.SetRigidbodyWagons(_wagons, _wagonHead);

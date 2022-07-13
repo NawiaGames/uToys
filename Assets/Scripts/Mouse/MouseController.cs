@@ -5,6 +5,7 @@ public class MouseController : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
     [SerializeField] private AnimationController _animationController;
+    [SerializeField] private LevelsCreate _levelsCreate; 
     
     private SelectObject _currentSelectObject;
     private Platform _currentPlatform;
@@ -91,7 +92,8 @@ public class MouseController : MonoBehaviour
     private void SetSelectObjectToPlatform()
     {
         _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
-        _animationController.StartAnimationEndLevel(_currentSelectObject);
+        var trainPath = _levelsCreate.LevelsContainer[LevelsLoad.CurrentLevel].FollowerPath;
+        _animationController.StartAnimationEndLevel(_currentSelectObject, trainPath);
         _currentPlatform.SetIsEmpty(false);
         _currentPlatform = null;
     }
