@@ -86,7 +86,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7009237515773625043}
+    m_TransformParent: {fileID: 1983440926465821566}
     m_Modifications:
     - target: {fileID: 5066156608595307735, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
@@ -101,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 5066156610305205677, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5066156610305205677, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
@@ -126,17 +126,17 @@ PrefabInstance:
     - target: {fileID: 5066156610305205677, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5066156610305205677, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5066156610305205677, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5066156610305205677, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
@@ -366,6 +366,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2977917392677033238}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1983440926465821566 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3662879041134747240, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2977917392677033238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3469442890273327212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1834759425744166266, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
@@ -375,12 +381,6 @@ Transform:
 --- !u!4 &6933715710141783272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5290095296979864062, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
-    type: 3}
-  m_PrefabInstance: {fileID: 2977917392677033238}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &7009237515773625043 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5194445276298844101, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
     type: 3}
   m_PrefabInstance: {fileID: 2977917392677033238}
   m_PrefabAsset: {fileID: 0}
