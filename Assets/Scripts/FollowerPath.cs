@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using PathCreation;
 
 public class FollowerPath : MonoBehaviour
@@ -10,6 +11,16 @@ public class FollowerPath : MonoBehaviour
     [SerializeField] private Vector3 _offsetIocomotive = Vector3.zero; 
     private float _distanceTravelled;
     private bool _isEndPath;
+
+
+    private void Start()
+    {
+        foreach (var van in _followerVans)
+        {
+            van.transform.position =  _pathCreator.path.GetPointAtDistance(0, EndOfPathInstruction.Stop);
+            van.transform.rotation = _pathCreator.path.GetRotationAtDistance(0, EndOfPathInstruction.Stop);
+        }
+    }
 
     private void Update()
     {
