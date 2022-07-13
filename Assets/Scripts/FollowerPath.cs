@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using PathCreation;
 
 public class FollowerPath : MonoBehaviour
@@ -6,16 +7,28 @@ public class FollowerPath : MonoBehaviour
     [SerializeField] private PathCreator _pathCreator;
     [SerializeField] private float _speed = 5f;
     [SerializeField] private FollowerVan[] _followerVans;
-    [SerializeField] private float _speedVan = 5f;
-    [SerializeField] private Vector3 _offsetIocomotive = Vector3.zero; 
     private float _distanceTravelled;
     private bool _isEndPath;
 
+    [ContextMenu("StartMove")]
+    public void StartMoveTrain()
+    {
+        StopAllCoroutines();
+        StartCoroutine(MoveTrain());
+    }
 
-    private void Start()
+    private IEnumerator MoveTrain()
     {
         SetStartPositionWagons();
+        yield return new WaitForEndOfFrame();
+        while (!_isEndPath)
+        {
+            MoveWagonsAndHead();
+            yield return null;
+        }
+
     }
+    
 
     private void SetStartPositionWagons()
     {
@@ -26,17 +39,10 @@ public class FollowerPath : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (!_isEndPath)
-            MoveVans();
-    }
-
-    private void MoveVans()
+    private void MoveWagonsAndHead()
     {
         var previousPosition = transform.position;
         var previousRotation = transform.rotation;
-        previousPosition += _offsetIocomotive; 
         
         foreach (var van in _followerVans)
         {
@@ -44,8 +50,8 @@ public class FollowerPath : MonoBehaviour
             var tempRotation = vanTransform.rotation;
             var tempPosition = vanTransform.position;
             van.transform.rotation =
-                Quaternion.Lerp(vanTransform.rotation, previousRotation, _speedVan * Time.deltaTime);
-            van.transform.position = Vector3.Lerp(vanTransform.position, previousPosition, _speedVan * Time.deltaTime);
+                Quaternion.Lerp(vanTransform.rotation, previousRotation, _speed * Time.deltaTime);
+            van.transform.position = Vector3.Lerp(vanTransform.position, previousPosition, _speed * Time.deltaTime);
 
             previousPosition = tempPosition;
             previousRotation = tempRotation;
