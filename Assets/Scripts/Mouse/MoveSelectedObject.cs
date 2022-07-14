@@ -7,6 +7,7 @@ public class MoveSelectedObject : MonoBehaviour
     [SerializeField] private float _speedDown = 10f;
     [SerializeField] private float _distanceTouch = 5f;
     [SerializeField] private Ease _ease = Ease.InSine;
+    [SerializeField] private float _positionY = 1f; 
     private Camera _camera;
     private SelectObject _currentSelectObject;
 
@@ -14,16 +15,15 @@ public class MoveSelectedObject : MonoBehaviour
 
     public void SetSelectObject(SelectObject currentSelectObject) => _currentSelectObject = currentSelectObject;
 
-    public void MoveSelectObject()
+    public void MoveSelectObject(Vector3 position)
     {
         if (_currentSelectObject == null) return;
 
         var objectTransform = _currentSelectObject.gameObject.transform;
-        var positionMouse = Input.mousePosition;
-        positionMouse.z = _distanceTouch;
-        var worldMousePosition = _camera.ScreenToWorldPoint(positionMouse);
+        
         objectTransform.position =
-            Vector3.Lerp(objectTransform.position, worldMousePosition, Time.deltaTime * _speedMove);
+            Vector3.Lerp(objectTransform.position, position, Time.deltaTime * _speedMove);
+
     }
 
     public void StartCoroutineMove(Vector3 position)

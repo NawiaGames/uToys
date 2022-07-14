@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speedMove: 10
   _speedDown: 0.2
-  _distanceTouch: 18
+  _distanceTouch: 36
   _ease: 14
 --- !u!114 &54799766263609720
 MonoBehaviour:

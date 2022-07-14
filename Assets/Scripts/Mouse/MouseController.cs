@@ -5,8 +5,7 @@ public class MouseController : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
     [SerializeField] private AnimationController _animationController;
-    [SerializeField] private LevelsCreate _levelsCreate; 
-    
+    [SerializeField] private LevelsCreate _levelsCreate;
     private SelectObject _currentSelectObject;
     private Platform _currentPlatform;
     private Raycast _raycast;
@@ -24,7 +23,8 @@ public class MouseController : MonoBehaviour
 
         if (_currentSelectObject != null)
         {
-            _moveSelectedObject.MoveSelectObject();
+            var postion = _raycast.GetInputPlanePosition();
+            _moveSelectedObject.MoveSelectObject(postion);
 
             _currentSelectObject.EnableCollider(false);
 

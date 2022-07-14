@@ -934,6 +934,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3116045612175510977, guid: 26e278326774de940a4b7034f60052cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3215870871397391805, guid: 26e278326774de940a4b7034f60052cb,
         type: 3}
       propertyPath: m_Layer
@@ -1044,6 +1049,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pinocchio
       objectReference: {fileID: 0}
+    - target: {fileID: 4527417240029942383, guid: 26e278326774de940a4b7034f60052cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4625929788738176713, guid: 26e278326774de940a4b7034f60052cb,
         type: 3}
       propertyPath: m_Layer
@@ -1095,6 +1105,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5560728729240514991, guid: 26e278326774de940a4b7034f60052cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5804320674113478040, guid: 26e278326774de940a4b7034f60052cb,
         type: 3}
       propertyPath: m_Layer
       value: 2
@@ -1195,6 +1210,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7752443511747136712, guid: 26e278326774de940a4b7034f60052cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791597495351709293, guid: 26e278326774de940a4b7034f60052cb,
         type: 3}
       propertyPath: m_Layer
       value: 2
