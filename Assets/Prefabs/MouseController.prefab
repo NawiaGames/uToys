@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2268559781602432770}
   - component: {fileID: 2268559781602432771}
   - component: {fileID: 54799766263609720}
-  - component: {fileID: 7329395168129430558}
   m_Layer: 0
   m_Name: MouseController
   m_TagString: Untagged
@@ -50,6 +49,7 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _moveSelectedObject: {fileID: 2268559781602432771}
   _animationController: {fileID: 54799766263609720}
+  _levelsCreate: {fileID: 0}
 --- !u!114 &2268559781602432771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedMove: 10
-  _speedDown: 0.5
-  _distanceTouch: 8
+  _speedDown: 0.2
+  _distanceTouch: 18
   _ease: 14
 --- !u!114 &54799766263609720
 MonoBehaviour:
@@ -80,17 +80,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelsCreate: {fileID: 0}
   _managerUIPanel: {fileID: 0}
---- !u!114 &7329395168129430558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2268559781602432768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d897add9f805a743a2671212ba03ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelsCreate: {fileID: 0}
-  _managerUIPanel: {fileID: 0}
+  _timaWaitPhysics: 3

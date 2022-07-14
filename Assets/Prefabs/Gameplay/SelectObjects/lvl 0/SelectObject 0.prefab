@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 5461891830283486812, guid: fde48d3340db17548ab445cd4f636f05,
         type: 3}
       propertyPath: m_Name
-      value: SelectObject
+      value: SelectObject 0
       objectReference: {fileID: 0}
     - target: {fileID: 7779071530295445320, guid: fde48d3340db17548ab445cd4f636f05,
         type: 3}
@@ -176,5 +176,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.2, z: 2.5}
+  m_Size: {x: 1.5, y: 0.2, z: 3}
   m_Center: {x: 0, y: 0, z: 0}

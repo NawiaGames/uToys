@@ -200,6 +200,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 1428240220786370257, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820858788131259432, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2079070178128869953, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
         type: 3}
       propertyPath: m_IsActive
@@ -208,6 +218,16 @@ PrefabInstance:
     - target: {fileID: 2170363351887779951, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
         type: 3}
       propertyPath: _answer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285795393540524071, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209575082498889557, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
+        type: 3}
+      propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4961808094432090854, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
@@ -566,6 +586,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectObject 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7583833984593086668, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
         type: 3}
       propertyPath: _isPlayPhysics
@@ -651,6 +676,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SelectObject 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583833984593086668, guid: 9d60ac7c66888ed4e82580ffff5ca4c8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8256611064744364792, guid: 9d60ac7c66888ed4e82580ffff5ca4c8,
         type: 3}
