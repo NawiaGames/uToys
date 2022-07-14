@@ -93,6 +93,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983440926465821566}
     m_Modifications:
+    - target: {fileID: 2009754925871283133, guid: 9be6c18ffc2947b449e53b250e473379,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5066156608595307735, guid: 9be6c18ffc2947b449e53b250e473379,
         type: 3}
       propertyPath: _pathCreator
@@ -158,9 +163,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2009754925871283133, guid: 9be6c18ffc2947b449e53b250e473379, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9be6c18ffc2947b449e53b250e473379, type: 3}
+--- !u!95 &454246431241447282 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2009754925871283133, guid: 9be6c18ffc2947b449e53b250e473379,
+    type: 3}
+  m_PrefabInstance: {fileID: 2137481167593839823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6622333606294892568 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5066156608595307735, guid: 9be6c18ffc2947b449e53b250e473379,
@@ -184,7 +194,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _animator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 454246431241447282}
     - target: {fileID: -3243264195439774598, guid: 63e4dc2ed25cf7c43ae60b5712b969d9,
         type: 3}
       propertyPath: _followerPath
@@ -593,8 +603,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
         type: 3}
-      propertyPath: _isPlayPhysics
+      propertyPath: _answer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
+        type: 3}
+      propertyPath: _isPlayPhysics
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4, type: 3}
@@ -684,8 +699,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8256611064744364792, guid: 9d60ac7c66888ed4e82580ffff5ca4c8,
         type: 3}
+      propertyPath: _answer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256611064744364792, guid: 9d60ac7c66888ed4e82580ffff5ca4c8,
+        type: 3}
       propertyPath: _isPlayPhysics
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d60ac7c66888ed4e82580ffff5ca4c8, type: 3}

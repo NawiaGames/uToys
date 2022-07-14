@@ -56,10 +56,10 @@ public class AnimationController : MonoBehaviour
         
 
 
-        StartCoroutine(OpenSummaryScreen(selectObject));
+        StartCoroutine(OpenSummaryScreen(selectObject,false,trainPath));
     }
 
-    private IEnumerator OpenSummaryScreen(SelectObject selectObject, bool isPhysics = false)
+    private IEnumerator OpenSummaryScreen(SelectObject selectObject, bool isPhysics = false, FollowerPath trainPath = null)
     {
         if (!isPhysics)
         {
@@ -69,7 +69,7 @@ public class AnimationController : MonoBehaviour
                 yield return null;
             }
         }
-        
+        trainPath?.ParticleSystemSmoke.Stop();
         _managerUIPanel.OpenPanelSummary(selectObject.Answer);
     }
 }
