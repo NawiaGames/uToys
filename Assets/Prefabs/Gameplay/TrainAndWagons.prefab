@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 5066156610289895989}
   _wagonHead: {fileID: 5066156608595307728}
   _fallTrain: {fileID: 5066156608595307729}
+  _particleSystemSmoke: {fileID: 4940016774863867584}
 --- !u!114 &5066156608595307729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,3 +890,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 546ca518117e46a419b8478f578d925c, type: 3}
+--- !u!198 &4940016774863867584 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3920615547002810682, guid: 546ca518117e46a419b8478f578d925c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8279485302217818106}
+  m_PrefabAsset: {fileID: 0}

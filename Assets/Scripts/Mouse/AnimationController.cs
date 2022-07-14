@@ -29,6 +29,7 @@ public class AnimationController : MonoBehaviour
 
         if (selectObject.IsPlayPhysics)
         {
+            trainPath.ParticleSystemSmoke.Stop();
             trainPath.FallTrain.Fall();
             yield return new WaitForSeconds(_timaWaitPhysics); 
             StartCoroutine(OpenSummaryScreen(selectObject, true));

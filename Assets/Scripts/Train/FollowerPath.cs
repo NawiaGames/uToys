@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using PathCreation;
 
@@ -9,6 +10,9 @@ public class FollowerPath : MonoBehaviour
     [SerializeField] private Wagon[] _wagons;
     [SerializeField] private Wagon _wagonHead; 
     [SerializeField] private FallTrain _fallTrain;
+    [SerializeField] private ParticleSystem _particleSystemSmoke;
+
+    public ParticleSystem ParticleSystemSmoke => _particleSystemSmoke; 
     private float _distanceTravelled;
     private bool _isEndPath;
 
@@ -23,6 +27,7 @@ public class FollowerPath : MonoBehaviour
     [ContextMenu("StartMove")]
     public void StartMoveTrain()
     {
+        _particleSystemSmoke.Play();
         StopAllCoroutines();
         StartCoroutine(MoveTrain());
     }
@@ -82,4 +87,6 @@ public class FollowerPath : MonoBehaviour
         transform.position = nextPosition;
         transform.rotation = _pathCreator.path.GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
     }
+    
+    
 }
