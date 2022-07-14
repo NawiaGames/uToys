@@ -38,6 +38,7 @@ public class LevelsLoad : MonoBehaviour
     {
         _levelsCreate.LevelsContainer[_currentLevel].SelectObjects.ResetObject();
         _levelsCreate.LevelsContainer[_currentLevel].Platform.SetIsEmpty(true);
+        _levelsCreate.LevelsContainer[_currentLevel].FollowerPath.ResetTrain();
     }
 
     
