@@ -444,6 +444,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: trolley (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e20212371acc6844dbcb72c954882be6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20212371acc6844dbcb72c954882be6, type: 3}
 --- !u!4 &4738952176211381117 stripped
@@ -554,6 +559,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trolley (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e20212371acc6844dbcb72c954882be6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20212371acc6844dbcb72c954882be6, type: 3}
@@ -666,6 +676,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: locomotive
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7fd5e05593a6114aa21219858ef0ffc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7fd5e05593a6114aa21219858ef0ffc, type: 3}
 --- !u!4 &4738952175862606100 stripped
@@ -776,6 +791,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: trolley (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e20212371acc6844dbcb72c954882be6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e20212371acc6844dbcb72c954882be6, type: 3}
