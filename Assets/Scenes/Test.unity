@@ -1322,6 +1322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7174765579612216338, guid: d2895cd73de97eb4ea95b6e880d6564b,
         type: 3}
+      propertyPath: m_Damper
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174765579612216338, guid: d2895cd73de97eb4ea95b6e880d6564b,
+        type: 3}
       propertyPath: m_Spring
       value: 1500
       objectReference: {fileID: 0}

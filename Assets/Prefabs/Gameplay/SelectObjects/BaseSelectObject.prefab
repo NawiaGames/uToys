@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 0}
   _answer: 0
+  _isPlayPhysics: 0
 --- !u!1 &6453067368224052868
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5936878591587854012
 RectTransform:
   m_ObjectHideFlags: 0
