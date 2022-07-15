@@ -10,7 +10,34 @@ public class Tutorial : MonoBehaviour
     public void StartTutorial(Vector3[] positions, Vector3 positionDragDrop)
     {
         StopAllCoroutines();
-        StartCoroutine(StartTutorialCoroutine(positions, positionDragDrop));
+        StartCoroutine(HandlerTutorial(positions, positionDragDrop));
+    }
+
+    private IEnumerator HandlerTutorial(Vector3[] positions, Vector3 positionDragDrop)
+    {
+        var coroutine = StartTutorialCoroutine(positions, positionDragDrop);
+        StartCoroutine(coroutine);
+
+        var _timer = 0f;
+
+        while (true)
+        {
+            yield return null;
+            if (Input.GetMouseButtonDown(0))
+            {
+                _inputOverlayTutorial.Deactivate();
+                StopCoroutine(coroutine);
+            }
+
+            _timer += Time.deltaTime;
+            if (_timer >= 10)
+            {
+                _timer = 0;
+                StopCoroutine(coroutine);
+                coroutine = StartTutorialCoroutine(positions, positionDragDrop);
+                StartCoroutine(coroutine);
+            }
+        }
     }
 
     private IEnumerator StartTutorialCoroutine(Vector3[] positions, Vector3 positionDragDrop)
@@ -21,7 +48,6 @@ public class Tutorial : MonoBehaviour
         {
             _inputOverlayTutorial.Activate(position);
             yield return new WaitForSeconds(_timeNextStep);
-            
         }
 
         var dragDrop = new Vector3[]
