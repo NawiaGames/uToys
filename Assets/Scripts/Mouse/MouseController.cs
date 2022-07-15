@@ -10,7 +10,7 @@ public class MouseController : MonoBehaviour
     private Platform _currentPlatform;
     private Raycast _raycast;
     private bool _canPastSelectObject;
-    
+
     private void Start()
     {
         _raycast = new Raycast(_camera);
@@ -59,7 +59,7 @@ public class MouseController : MonoBehaviour
         {
             if (_currentSelectObject == null) return;
 
-            ResetObjects();
+            SetObjects();
         }
     }
 
@@ -70,18 +70,21 @@ public class MouseController : MonoBehaviour
             _moveSelectedObject.SetSelectObject(_currentSelectObject);
     }
 
-    private void ResetObjects()
+    private void SetObjects()
     {
         if (_canPastSelectObject && _currentPlatform.IsEmpty())
         {
             SetSelectObjectToPlatform();
+            PlayParticleSystemSmoke();
         }
         else
         {
             ResetSelectObject();
         }
+
         _currentSelectObject = null;
     }
+
 
     private void ResetSelectObject()
     {
@@ -97,4 +100,7 @@ public class MouseController : MonoBehaviour
         _currentPlatform.SetIsEmpty(false);
         _currentPlatform = null;
     }
+
+    private void PlayParticleSystemSmoke() =>
+        _levelsCreate.LevelsContainer[LevelsLoad.CurrentLevel].ParticleSystemSmoek.Play();
 }
