@@ -32,7 +32,6 @@ public class Raycast
         Physics.Raycast(ray, out var raycastHitInfo, Mathf.Infinity, layerMask );
         Debug.DrawRay(ray.origin, ray.direction * 1000f);
         if (raycastHitInfo.collider == null) return null;
-        Debug.Log(raycastHitInfo.collider.name);
 
         var platform = raycastHitInfo.collider.GetComponentInParent<Platform>();
 
@@ -42,7 +41,7 @@ public class Raycast
     public Vector3 GetInputPlanePosition()
     {
         var ray = _camera.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(ray, out var raycastHitInfo, Mathf.Infinity);
+        Physics.Raycast(ray, out var raycastHitInfo, Mathf.Infinity, LayerMask.GetMask("InputPlane"));
 
         if (raycastHitInfo.collider == null) return Vector3.zero;
         if (raycastHitInfo.collider.GetComponent<InputPlane>() == null) return Vector3.zero;
