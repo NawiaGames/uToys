@@ -4,6 +4,8 @@ public class SelectObjects : MonoBehaviour
 {
     [SerializeField] private SelectObject[] _selectObjects;
 
+    public SelectObject[] SelectObjectsGame => _selectObjects; 
+    
     public void ResetObject()
     {
         foreach (var select in _selectObjects)

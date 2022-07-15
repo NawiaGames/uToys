@@ -142,4 +142,7 @@ public class FollowerPath : MonoBehaviour
         transform.rotation = _startRotations[^1];
         _distanceTravelled = 0;
     }
+
+    public Vector3 GetVector3EndPath() => _pathCreator.path.GetPoint(100);
+
 }

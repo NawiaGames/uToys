@@ -4,19 +4,21 @@ using UnityEngine;
 public class LevelsLoad : MonoBehaviour
 {
     [SerializeField] private int _currentLevel = 0;
+    [SerializeField] private Tutorial _tutorial;
 
     private LevelsCreate _levelsCreate;
-    
+
     public static int CurrentLevel = 0;
 
     private void Awake()
     {
-        CurrentLevel = _currentLevel; 
+        CurrentLevel = _currentLevel;
     }
+
     private void Start()
     {
         _levelsCreate = GetComponent<LevelsCreate>();
-        ActivateLevel(_currentLevel); 
+        ActivateLevel(_currentLevel);
     }
 
     private void ActivateLevel(int index)
@@ -24,14 +26,17 @@ public class LevelsLoad : MonoBehaviour
         var levels = _levelsCreate.LevelsContainer;
 
         if (index >= levels.Length)
-            index = 0; 
-        
+            index = 0;
+
         for (var i = 0; i < levels.Length; i++)
-          levels[i].gameObject.SetActive(i == index);
-        
+            levels[i].gameObject.SetActive(i == index);
+
         _currentLevel = index;
         CurrentLevel = _currentLevel;
         ResetCurrentLevel();
+
+        if (_currentLevel == 0)
+            ActivateTutorial();
     }
 
     public void ResetCurrentLevel()
@@ -41,7 +46,6 @@ public class LevelsLoad : MonoBehaviour
         _levelsCreate.LevelsContainer[_currentLevel].FollowerPath.ResetTrain();
     }
 
-    
     public void LoadNextLevel()
     {
         ActivateLevel(_currentLevel + 1);
@@ -50,5 +54,15 @@ public class LevelsLoad : MonoBehaviour
     public void LoadIndexLevel(int index)
     {
         ActivateLevel(index);
+    }
+
+    private void ActivateTutorial()
+    {
+        var objects = _levelsCreate.LevelsContainer[_currentLevel].SelectObjects.SelectObjectsGame;
+        var positions = new Vector3[objects.Length];
+        for (var i = 0; i < positions.Length; i++)
+            positions[i] = objects[i].transform.position;
+        var positionDragDrop = _levelsCreate.LevelsContainer[_currentLevel].FollowerPath.GetVector3EndPath();
+        _tutorial.StartTutorial(positions, positionDragDrop);
     }
 }
