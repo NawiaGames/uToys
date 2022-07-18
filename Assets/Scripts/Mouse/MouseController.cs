@@ -6,6 +6,7 @@ public class MouseController : MonoBehaviour
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
     [SerializeField] private AnimationController _animationController;
     [SerializeField] private LevelsCreate _levelsCreate;
+    [SerializeField] private Tutorial _tutorial; 
     private SelectObject _currentSelectObject;
     private Platform _currentPlatform;
     private Raycast _raycast;
@@ -99,6 +100,9 @@ public class MouseController : MonoBehaviour
         _animationController.StartAnimationEndLevel(_currentSelectObject, trainPath);
         _currentPlatform.SetIsEmpty(false);
         _currentPlatform = null;
+        
+        if(LevelsLoad.CurrentLevel == 0) 
+            _tutorial.StopTutorial();
     }
 
     private void PlayParticleSystemSmoke() =>

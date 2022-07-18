@@ -59,4 +59,10 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(_timeNextStep + 0.5f);
         _inputOverlayTutorial.Deactivate();
     }
+
+    public void StopTutorial()
+    {
+        StopAllCoroutines();
+        _inputOverlayTutorial.Deactivate();
+    }
 }
