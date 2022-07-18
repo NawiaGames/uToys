@@ -982,7 +982,7 @@ PrefabInstance:
     - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
         type: 3}
       propertyPath: _isRagDollModel
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4, type: 3}
