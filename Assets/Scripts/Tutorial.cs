@@ -7,6 +7,8 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private InputOverlayTutorial _inputOverlayTutorial;
     [SerializeField] private float _timeNextStep = 1f;
 
+    private bool _isHoldBack; 
+
     public void StartTutorial(Vector3[] positions, Vector3 positionDragDrop)
     {
         StopAllCoroutines();
@@ -25,12 +27,16 @@ public class Tutorial : MonoBehaviour
             yield return null;
             if (Input.GetMouseButtonDown(0))
             {
+                _isHoldBack = true; 
                 _inputOverlayTutorial.Deactivate();
                 StopCoroutine(coroutine);
             }
 
+            if (Input.GetMouseButtonUp(0))
+                _isHoldBack = false;
+
             _timer += Time.deltaTime;
-            if (_timer >= 10)
+            if (_timer >= 10 && !_isHoldBack)
             {
                 _timer = 0;
                 StopCoroutine(coroutine);
