@@ -15,7 +15,7 @@ TagManager:
   - SetSelectObject
   - Train
   - InputPlane
-  - 
+  - noSelfCollisions
   - 
   - 
   - 
