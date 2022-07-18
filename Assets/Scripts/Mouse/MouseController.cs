@@ -15,7 +15,6 @@ public class MouseController : MonoBehaviour
     private void Start()
     {
         _raycast = new Raycast(_camera);
-        _moveSelectedObject.SetCamera(_camera);
     }
 
     private void Update()
