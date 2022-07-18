@@ -919,6 +919,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3190193119688308048, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
+        type: 3}
+      propertyPath: m_MaxDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3190193119688308048, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
+        type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4144952651116654466, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -967,6 +977,11 @@ PrefabInstance:
     - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
         type: 3}
       propertyPath: _isPlayPhysics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8256611064744364792, guid: 9a4b79ad8c5a5cd4289b692e92efcbe4,
+        type: 3}
+      propertyPath: _isRagDollModel
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
