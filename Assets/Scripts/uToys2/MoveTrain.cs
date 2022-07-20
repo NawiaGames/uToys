@@ -48,11 +48,12 @@ public class MoveTrain : MonoBehaviour
         _distanceTravelled += _speed * Time.deltaTime;
         var nextPosition = _pathCreator[_countPath].path
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-
-        if (transform.position == nextPosition)
-            StopTrain();
-
-
+        
+        if (transform.position == nextPosition && _pathCreator.Length > _countPath + 1)
+        {
+            NextPath();
+        }
+        
         transform.position = nextPosition;
         transform.rotation = _pathCreator[_countPath].path
             .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
@@ -77,7 +78,6 @@ public class MoveTrain : MonoBehaviour
     private void NextPath()
     {
         _countPath++;
-        if (_pathCreator.Length <= _countPath) return;
         _distanceTravelled = 0f;
         StartTrain();
     }

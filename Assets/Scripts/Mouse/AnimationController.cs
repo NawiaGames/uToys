@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
+    [SerializeField] private MoveTrain _moveTrain; 
     [SerializeField] private LevelsCreate _levelsCreate;
     [SerializeField] private ManagerUIPanel _managerUIPanel;
     [SerializeField] private float _timaWaitPhysics = 3f; 
@@ -71,5 +72,10 @@ public class AnimationController : MonoBehaviour
         }
         trainPath?.ParticleSystemSmoke.Stop();
         _managerUIPanel.OpenPanelSummary(selectObject.Answer);
+    }
+
+    public void StartAnimation(SelectObject selectObject)
+    {
+        _moveTrain.StartTrain();
     }
 }

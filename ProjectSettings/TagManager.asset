@@ -16,7 +16,7 @@ TagManager:
   - Train
   - InputPlane
   - noSelfCollisions
-  - 
+  - NoCamera
   - 
   - 
   - 
