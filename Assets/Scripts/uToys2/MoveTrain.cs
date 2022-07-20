@@ -50,7 +50,7 @@ public class MoveTrain : MonoBehaviour
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
 
         if (transform.position == nextPosition)
-            _isEndPath = true;
+            StopTrain();
 
 
         transform.position = nextPosition;
@@ -79,7 +79,7 @@ public class MoveTrain : MonoBehaviour
         _countPath++;
         if (_pathCreator.Length <= _countPath) return;
         _distanceTravelled = 0f;
-        _isEndPath = false;
+        StartTrain();
     }
 
     public void SetPathCreators(PathCreator[] pathCreators)
@@ -89,5 +89,11 @@ public class MoveTrain : MonoBehaviour
         for (var i = 0; i < pathCreators.Length; i++)
             _pathCreator[i] = pathCreators[i];
     }
+
+    public void StopTrain() => _isEndPath = true;
+
+    [ContextMenu("StartTrain")]
+    public void StartTrain() => _isEndPath = false; 
+
 
 }
