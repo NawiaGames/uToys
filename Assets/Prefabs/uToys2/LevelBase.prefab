@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 1750262796370422385}
-  _answer: 0
+  _answer: 1
   _isPlayPhysics: 0
   _isRagDollModel: 0
 --- !u!1 &1750262795101921921

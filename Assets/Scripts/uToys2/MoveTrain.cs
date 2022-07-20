@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+using System.Linq;
 using PathCreation;
 using UnityEngine;
 
 public class MoveTrain : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
-    [SerializeField] private Wagon[] _wagons;
+    [SerializeField] private List <Wagon> _wagons;
 
     private PathCreator[] _pathCreator;
     private float _distanceTravelled;
@@ -18,8 +20,8 @@ public class MoveTrain : MonoBehaviour
 
     private void Update()
     {
-        if (!_isEndPath)
-            MoveWagonsAndHead();
+     if (!_isEndPath)
+         MoveWagonsAndHead();
     }
 
     private void MoveWagonsAndHead()
@@ -74,7 +76,6 @@ public class MoveTrain : MonoBehaviour
         }
     }
 
-    [ContextMenu("NextPath")]
     private void NextPath()
     {
         _countPath++;
@@ -92,8 +93,18 @@ public class MoveTrain : MonoBehaviour
 
     public void StopTrain() => _isEndPath = true;
 
-    [ContextMenu("StartTrain")]
-    public void StartTrain() => _isEndPath = false; 
+    public void StartTrain() => _isEndPath = false;
 
+    [ContextMenu("DeleteWagon")]
+    public void DeleteWagon()
+    {
+        _wagons.Last().Explosion();
+        _wagons.Remove(_wagons.Last());
 
+        if (_wagons.Count == 0)
+        {
+            StopTrain();
+            Debug.Log("Game Over");
+        }
+    }
 }

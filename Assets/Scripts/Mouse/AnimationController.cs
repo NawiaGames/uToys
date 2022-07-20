@@ -77,5 +77,8 @@ public class AnimationController : MonoBehaviour
     public void StartAnimation(SelectObject selectObject)
     {
         _moveTrain.StartTrain();
+        
+        if(selectObject.Answer == Answer.Fail)
+            _moveTrain.DeleteWagon();
     }
 }
