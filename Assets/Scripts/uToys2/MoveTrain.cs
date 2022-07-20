@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class MoveTrain : MonoBehaviour
 {
-    [SerializeField] private PathCreator[] _pathCreator;
     [SerializeField] private float _speed = 5f;
     [SerializeField] private Wagon[] _wagons;
 
+    private PathCreator[] _pathCreator;
     private float _distanceTravelled;
     private bool _isEndPath;
     private int _countPath;
@@ -81,4 +81,13 @@ public class MoveTrain : MonoBehaviour
         _distanceTravelled = 0f;
         _isEndPath = false;
     }
+
+    public void SetPathCreators(PathCreator[] pathCreators)
+    {
+        _pathCreator = new PathCreator[pathCreators.Length];
+
+        for (var i = 0; i < pathCreators.Length; i++)
+            _pathCreator[i] = pathCreators[i];
+    }
+
 }

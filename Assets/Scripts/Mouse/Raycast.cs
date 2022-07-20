@@ -20,7 +20,6 @@ public class Raycast
         if (raycastHitInfo.collider == null) return null;
 
         var currentSelectObject = raycastHitInfo.collider.GetComponentInParent<SelectObject>();
-
         return currentSelectObject;
     }
 
