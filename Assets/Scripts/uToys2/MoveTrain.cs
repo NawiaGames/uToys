@@ -56,6 +56,11 @@ public class MoveTrain : MonoBehaviour
         {
             NextPath();
         }
+        else if (transform.position == nextPosition)
+        {
+            StopTrain();
+            _managerUIPanel.OpenPanelSummary(Answer.Win);
+        }
         
         transform.position = nextPosition;
         transform.rotation = _pathCreator[_countPath].path
