@@ -6804,6 +6804,11 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 1651042424}
+    - target: {fileID: 6639098982648049414, guid: c23908c9a99bb734b84f676f1882f97b,
+        type: 3}
+      propertyPath: _trainController
+      value: 
+      objectReference: {fileID: 3620950429946335004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c23908c9a99bb734b84f676f1882f97b, type: 3}
 --- !u!4 &5459457152419617039

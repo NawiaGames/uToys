@@ -4,7 +4,8 @@ public class InputController : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
-    [SerializeField] private AnimationController _animationController; 
+    [SerializeField] private AnimationController _animationController;
+    [SerializeField] private TrainController _trainController; 
     
     private Platform _currentPlatform;
     private SelectObject _currentSelectObject;
@@ -49,7 +50,7 @@ public class InputController : MonoBehaviour
     
     private void MouseHandler()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _trainController.MoveTrain.IsEndPath)
         {
             TrySetSelectObject();
         }
