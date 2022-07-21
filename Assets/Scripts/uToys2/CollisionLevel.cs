@@ -4,8 +4,12 @@ public class CollisionLevel : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        var train = other.GetComponentInParent<MoveTrain>();
-        if (train != null)
-            train.StopTrain();
+        var trainHead = other.GetComponentInParent<MoveTrain>();
+        if (trainHead != null)
+        {
+            trainHead.StopTrain();
+            var train = trainHead.GetComponentInParent<TrainController>(); 
+            train.EnableCameraLevel();
+        }
     }
 }

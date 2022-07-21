@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathCreator: {fileID: 1750262795095280712}
+  _virtualCamera: {fileID: 4656297582246195414}
 --- !u!1 &1750262794743508770
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,11 @@ public class MoveTrain : MonoBehaviour
     private PathCreator[] _pathCreator;
     private float _distanceTravelled;
     private bool _isEndPath;
-    private int _countPath;
+    private int _indexCurrentPath;
 
     public bool IsEndPath => _isEndPath;
     public List<Wagon> Wagons => _wagons;
+    public int IndexCurrentPath => _indexCurrentPath;
 
     public void MoveWagonsAndHead()
     {
@@ -39,10 +40,10 @@ public class MoveTrain : MonoBehaviour
     private void MoveHeadPath()
     {
         _distanceTravelled += _speed * Time.deltaTime;
-        var nextPosition = _pathCreator[_countPath].path
+        var nextPosition = _pathCreator[_indexCurrentPath].path
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
 
-        if (transform.position == nextPosition && _pathCreator.Length > _countPath + 1)
+        if (transform.position == nextPosition && _pathCreator.Length > _indexCurrentPath + 1)
         {
             NextPath();
         }
@@ -53,14 +54,14 @@ public class MoveTrain : MonoBehaviour
         }
 
         transform.position = nextPosition;
-        transform.rotation = _pathCreator[_countPath].path
+        transform.rotation = _pathCreator[_indexCurrentPath].path
             .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
     }
 
     public void StartPositionWagons()
     {
-        var position = _pathCreator[_countPath].path.GetPointAtDistance(0);
-        var rotation = _pathCreator[_countPath].path.GetRotationAtDistance(0);
+        var position = _pathCreator[_indexCurrentPath].path.GetPointAtDistance(0);
+        var rotation = _pathCreator[_indexCurrentPath].path.GetRotationAtDistance(0);
         var backOffset = Vector3.back;
         foreach (var wagon in _wagons)
         {
@@ -74,7 +75,7 @@ public class MoveTrain : MonoBehaviour
 
     private void NextPath()
     {
-        _countPath++;
+        _indexCurrentPath++;
         _distanceTravelled = 0f;
         StartTrain();
     }

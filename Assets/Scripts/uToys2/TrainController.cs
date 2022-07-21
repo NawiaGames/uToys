@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 
 public class TrainController : MonoBehaviour
 {
     [SerializeField] private MoveTrain _moveTrain;
     [SerializeField] private DeleteWagon _deleteWagon;
-
+    [SerializeField] private CreatorLevelq _creatorLevelq;
+    
     public MoveTrain MoveTrain => _moveTrain; 
 
     private void Start()
@@ -19,4 +21,14 @@ public class TrainController : MonoBehaviour
     }
 
     public void DeleteLastWagon() => _deleteWagon.DeleteLastWagon();
+
+    public void EnableCameraLevel()
+    {
+        _creatorLevelq.Levelqs[_moveTrain.IndexCurrentPath].VirtualCamera.enabled = true; 
+    }
+
+    [ContextMenu("Disable Camera")]
+    public void DisableCameraLevel()
+    {
+        _creatorLevelq.Levelqs[_moveTrain.IndexCurrentPath].VirtualCamera.enabled = false;     }
 }
