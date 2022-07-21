@@ -15,11 +15,8 @@ public class ButtonGameUI : MonoBehaviour
         _panelDebugMenu.SetActive(_isOpenDebugMenu);
     }
 
-    public void ResetScene()
-    {
-        Debug.Log("I am work");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    public void ResetScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    
 
     [ContextMenu("ResetCurrentLevel")]
     public void ResetCurrentLevel()

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MoveTrain : MonoBehaviour
 {
+    [SerializeField] private ManagerUIPanel _managerUIPanel; 
     [SerializeField] private float _speed = 5f;
     [SerializeField] private List <Wagon> _wagons;
 
@@ -101,10 +102,9 @@ public class MoveTrain : MonoBehaviour
         _wagons.Last().Explosion();
         _wagons.Remove(_wagons.Last());
 
-        if (_wagons.Count == 0)
-        {
-            StopTrain();
-            Debug.Log("Game Over");
-        }
+        if (_wagons.Count != 0) return;
+        
+        StopTrain();
+        _managerUIPanel.OpenPanelSummary(Answer.Fail);
     }
 }

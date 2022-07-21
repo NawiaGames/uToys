@@ -645,6 +645,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972592907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3751553739936090239, guid: df9af0c83a036664aacbb8f9cd5853af,
+    type: 3}
+  m_PrefabInstance: {fileID: 1565301795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caae6d1749d50341be4e23cc0c6f236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &172634127668519613
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6348,6 +6360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2694a95355e1340b4ce665679a950c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _managerUIPanel: {fileID: 1972592907}
   _speed: 7
   _wagons:
   - {fileID: 3620950429508082793}
