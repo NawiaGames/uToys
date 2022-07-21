@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using PathCreation;
 using UnityEngine;
 
@@ -14,6 +13,7 @@ public class MoveTrain : MonoBehaviour
     private int _countPath;
 
     public bool IsEndPath => _isEndPath;
+    public List<Wagon> Wagons => _wagons;
 
     public void MoveWagonsAndHead()
     {
@@ -91,15 +91,5 @@ public class MoveTrain : MonoBehaviour
 
     public void StartTrain() => _isEndPath = false;
 
-    [ContextMenu("DeleteWagon")]
-    public void DeleteWagon()
-    {
-        _wagons.Last().Explosion();
-        _wagons.Remove(_wagons.Last());
 
-        if (_wagons.Count != 0) return;
-
-        StopTrain();
-        EventManager.OnOpenedSummary(Answer.Fail);
-    }
 }

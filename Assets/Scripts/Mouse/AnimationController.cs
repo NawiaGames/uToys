@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField] private MoveTrain _moveTrain; 
+    [SerializeField] private TrainController _trainController;
     [SerializeField] private LevelsCreate _levelsCreate;
     [SerializeField] private ManagerUIPanel _managerUIPanel;
     [SerializeField] private float _timaWaitPhysics = 3f; 
@@ -76,9 +76,9 @@ public class AnimationController : MonoBehaviour
 
     public void StartAnimation(SelectObject selectObject)
     {
-        _moveTrain.StartTrain();
+        _trainController.MoveTrain.StartTrain();
         
         if(selectObject.Answer == Answer.Fail)
-            _moveTrain.DeleteWagon();
+            _trainController.DeleteLastWagon();
     }
 }

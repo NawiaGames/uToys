@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CreatorLevelq : MonoBehaviour
 {
-    [SerializeField] private MoveTrain _moveTrain;
+    [SerializeField] private TrainController _trainController;
     [SerializeField] private Levelq[] _levels;
 
     private Levelq[] _levelsContainer;
@@ -26,7 +26,7 @@ public class CreatorLevelq : MonoBehaviour
         
         CreateLevel(size);
         
-        _moveTrain.SetPathCreators(_levelsPathCreator);
+        _trainController.MoveTrain.SetPathCreators(_levelsPathCreator);
     }
 
     private void CreateLevel(int size)
