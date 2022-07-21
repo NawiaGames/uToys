@@ -190,6 +190,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &609832483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7169228983714908380, guid: cd1dca9a10ea1634e82b7adb823fe1d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 7169228982996207695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf19cde628ff6847ad910fb38327a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1207891796
 GameObject:
   m_ObjectHideFlags: 0
@@ -6550,6 +6562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveTrain: {fileID: 3620950430316545952}
   _deleteWagon: {fileID: 3620950430316545953}
+  _creatorLevelq: {fileID: 609832483}
 --- !u!1 &3620950429964263795
 GameObject:
   m_ObjectHideFlags: 0
@@ -6983,6 +6996,11 @@ PrefabInstance:
       objectReference: {fileID: 3620950430316545952}
     - target: {fileID: 6639098982648049408, guid: c23908c9a99bb734b84f676f1882f97b,
         type: 3}
+      propertyPath: _creatorLevelq
+      value: 
+      objectReference: {fileID: 609832483}
+    - target: {fileID: 6639098982648049408, guid: c23908c9a99bb734b84f676f1882f97b,
+        type: 3}
       propertyPath: _trainController
       value: 
       objectReference: {fileID: 3620950429946335004}
@@ -7373,7 +7391,7 @@ PrefabInstance:
     - target: {fileID: 7169228983714908380, guid: cd1dca9a10ea1634e82b7adb823fe1d6,
         type: 3}
       propertyPath: _levels.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7169228983714908380, guid: cd1dca9a10ea1634e82b7adb823fe1d6,
         type: 3}

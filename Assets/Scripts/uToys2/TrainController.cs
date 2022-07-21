@@ -24,11 +24,11 @@ public class TrainController : MonoBehaviour
 
     public void EnableCameraLevel()
     {
-        _creatorLevelq.Levelqs[_moveTrain.IndexCurrentPath].VirtualCamera.enabled = true; 
+        _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true; 
     }
 
     [ContextMenu("Disable Camera")]
     public void DisableCameraLevel()
     {
-        _creatorLevelq.Levelqs[_moveTrain.IndexCurrentPath].VirtualCamera.enabled = false;     }
+        _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = false;     }
 }

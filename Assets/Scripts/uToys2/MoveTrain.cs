@@ -14,7 +14,8 @@ public class MoveTrain : MonoBehaviour
 
     public bool IsEndPath => _isEndPath;
     public List<Wagon> Wagons => _wagons;
-    public int IndexCurrentPath => _indexCurrentPath;
+    
+    public static int IndexCurrentPath;
 
     public void MoveWagonsAndHead()
     {
@@ -78,6 +79,8 @@ public class MoveTrain : MonoBehaviour
         _indexCurrentPath++;
         _distanceTravelled = 0f;
         StartTrain();
+
+        IndexCurrentPath = _indexCurrentPath;
     }
 
     public void SetPathCreators(PathCreator[] pathCreators)
