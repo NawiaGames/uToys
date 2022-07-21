@@ -59,7 +59,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 4
-  far clip plane: 160
+  far clip plane: 180
   field of view: 15
   orthographic: 0
   orthographic size: 5
@@ -156,7 +156,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5038944942082862116}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalRotation: {x: 0.30070576, y: 0, z: 0, w: 0.953717}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -164,7 +164,7 @@ Transform:
   - {fileID: 5038944942681097958}
   m_Father: {fileID: 5038944942275051861}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
 --- !u!1 &5038944942275051863
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5038944942275051861}
   - component: {fileID: 5038944942275051862}
+  - component: {fileID: 5071972677068387010}
   m_Layer: 0
   m_Name: _cameraRig
   m_TagString: Untagged
@@ -218,6 +219,20 @@ MonoBehaviour:
   virtualCameraFOV: 30
   virtualCameraNearClipPlane: 4
   virtualCameraFarClipPlane: 64
+--- !u!114 &5071972677068387010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038944942275051863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfdf15f2e840984eafdf2f3d801a356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSmoothing: 0.5
+  continuesUpdate: 1
 --- !u!1 &5038944942681097959
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5038944942681097959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0, z: -55}
+  m_LocalPosition: {x: -0, y: -0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
