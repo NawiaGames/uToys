@@ -5,27 +5,17 @@ using UnityEngine;
 
 public class MoveTrain : MonoBehaviour
 {
-    [SerializeField] private ManagerUIPanel _managerUIPanel; 
     [SerializeField] private float _speed = 5f;
-    [SerializeField] private List <Wagon> _wagons;
+    [SerializeField] private List<Wagon> _wagons;
 
     private PathCreator[] _pathCreator;
     private float _distanceTravelled;
     private bool _isEndPath;
     private int _countPath;
 
-    private void Start()
-    {
-        StartPositionWagons();
-    }
+    public bool IsEndPath => _isEndPath;
 
-    private void Update()
-    {
-     if (!_isEndPath)
-         MoveWagonsAndHead();
-    }
-
-    private void MoveWagonsAndHead()
+    public void MoveWagonsAndHead()
     {
         var previousPosition = transform.position;
         var previousRotation = transform.rotation;
@@ -36,7 +26,7 @@ public class MoveTrain : MonoBehaviour
             var tempRotation = vanTransform.rotation;
             var tempPosition = vanTransform.position;
             wagon.transform.rotation =
-                Quaternion.Lerp(vanTransform.rotation, previousRotation, _speed  * Time.deltaTime);
+                Quaternion.Lerp(vanTransform.rotation, previousRotation, _speed * Time.deltaTime);
             wagon.transform.position = Vector3.Lerp(vanTransform.position, previousPosition, _speed * Time.deltaTime);
 
             previousPosition = tempPosition;
@@ -51,7 +41,7 @@ public class MoveTrain : MonoBehaviour
         _distanceTravelled += _speed * Time.deltaTime;
         var nextPosition = _pathCreator[_countPath].path
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-        
+
         if (transform.position == nextPosition && _pathCreator.Length > _countPath + 1)
         {
             NextPath();
@@ -59,15 +49,15 @@ public class MoveTrain : MonoBehaviour
         else if (transform.position == nextPosition)
         {
             StopTrain();
-            _managerUIPanel.OpenPanelSummary(Answer.Win);
+            EventManager.OnOpenedSummary(Answer.Win);
         }
-        
+
         transform.position = nextPosition;
         transform.rotation = _pathCreator[_countPath].path
             .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
     }
 
-    private void StartPositionWagons()
+    public void StartPositionWagons()
     {
         var position = _pathCreator[_countPath].path.GetPointAtDistance(0);
         var rotation = _pathCreator[_countPath].path.GetRotationAtDistance(0);
@@ -108,8 +98,8 @@ public class MoveTrain : MonoBehaviour
         _wagons.Remove(_wagons.Last());
 
         if (_wagons.Count != 0) return;
-        
+
         StopTrain();
-        _managerUIPanel.OpenPanelSummary(Answer.Fail);
+        EventManager.OnOpenedSummary(Answer.Fail);
     }
 }
