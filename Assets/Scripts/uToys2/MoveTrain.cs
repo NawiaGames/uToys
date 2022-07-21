@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using PathCreation;
 using UnityEngine;
@@ -16,6 +17,11 @@ public class MoveTrain : MonoBehaviour
     public List<Wagon> Wagons => _wagons;
     
     public static int IndexCurrentPath;
+
+    private void Awake()
+    {
+        IndexCurrentPath = _indexCurrentPath; 
+    }
 
     public void MoveWagonsAndHead()
     {
