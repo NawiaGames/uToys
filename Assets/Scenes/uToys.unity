@@ -317,6 +317,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1021285535611261609, guid: df9af0c83a036664aacbb8f9cd5853af,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetScene
+      objectReference: {fileID: 0}
     - target: {fileID: 3751553739936090226, guid: df9af0c83a036664aacbb8f9cd5853af,
         type: 3}
       propertyPath: m_Pivot.x
@@ -426,6 +431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685851408559939721, guid: df9af0c83a036664aacbb8f9cd5853af,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9af0c83a036664aacbb8f9cd5853af, type: 3}
