@@ -20,16 +20,14 @@ public class SpawnRailRoad : MonoBehaviour
     private void Spawn()
     {
         var oldPosition = Vector3.zero;
-        var i = 0;
-        while (i < 500)
+        
+        while (true)
         {
-            i++;
             _distanceTravelled += _distance;
             var position = _levelq.PathCreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
             var rotation = _levelq.PathCreator.path.GetRotationAtDistance(_distanceTravelled,  EndOfPathInstruction.Stop);
             if (oldPosition == position)
             {
-                Debug.Log("I am work");
                 break;
             }
             Instantiate(_gameObjectRail, position, rotation, _transformParentRail);

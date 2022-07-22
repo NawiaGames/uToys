@@ -91,6 +91,7 @@ public class InputController : MonoBehaviour
         _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
         _currentPlatform.SetIsEmpty(false);
         _animationController.StartAnimation(_currentSelectObject);
+        _currentSelectObject.gameObject.SetActive(false);
         _cameraFollow.UpdatePositionAndRotationCamera();
         _currentPlatform = null;
     }
