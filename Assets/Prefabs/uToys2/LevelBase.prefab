@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &194520326658983069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8876944578649753195}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8876944578649753195
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194520326658983069}
-  m_LocalRotation: {x: -0, y: -0.7117596, z: -0, w: 0.7024232}
-  m_LocalPosition: {x: 3.62, y: 10.71, z: 15.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1750262794707605940}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -90.757, z: 0}
 --- !u!1 &883537521660826979
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750262794707605940}
   - component: {fileID: 5606984951967180334}
+  - component: {fileID: 679286709224785291}
   m_Layer: 0
   m_Name: LevelBase
   m_TagString: Untagged
@@ -117,7 +87,7 @@ Transform:
   - {fileID: 1029788383443722703}
   - {fileID: 2410736940127717672}
   - {fileID: 6952260469254071412}
-  - {fileID: 8876944578649753195}
+  - {fileID: 9113594987639539740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,6 +106,22 @@ MonoBehaviour:
   _pathCreator: {fileID: 1750262795095280712}
   _virtualCamera: {fileID: 4656297582246195414}
   _animator: {fileID: 4959341390117586100}
+--- !u!114 &679286709224785291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750262794707605941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc3f6a4492abff489c4471562db1c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectRail: {fileID: 137842611753142423, guid: 62bb97fadbea6044f834c1e92d072e25,
+    type: 3}
+  _distance: 0.2
+  _transformParentRail: {fileID: 9113594987639539740}
 --- !u!1 &1750262794743508770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +994,37 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!1 &3020421447052211763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9113594987639539740}
+  m_Layer: 0
+  m_Name: Rails
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9113594987639539740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020421447052211763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1750262794707605940}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6231476667975675571
 GameObject:
   m_ObjectHideFlags: 0
