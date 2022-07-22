@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using PathCreation;
 using UnityEngine;
 
@@ -70,9 +70,8 @@ public class MoveTrain : MonoBehaviour
         var position = _pathCreator[_indexCurrentPath].path.GetPointAtDistance(0);
         var rotation = _pathCreator[_indexCurrentPath].path.GetRotationAtDistance(0);
         var backOffset = Vector3.back;
-        foreach (var wagon in _wagons)
+        foreach (var transformWagon in _wagons.Select(wagon => wagon.transform))
         {
-            var transformWagon = wagon.transform;
             transformWagon.position = position;
             transformWagon.rotation = rotation;
             transformWagon.Translate(backOffset);
@@ -83,7 +82,7 @@ public class MoveTrain : MonoBehaviour
     private void NextPath()
     {
         _indexCurrentPath++;
-        _distanceTravelled = 0f;
+        _distanceTravelled = 0.01f;
         StartTrain();
 
         IndexCurrentPath = _indexCurrentPath;
