@@ -1,4 +1,5 @@
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(MoveTrain))]
@@ -16,9 +17,8 @@ public class DeleteWagon : MonoBehaviour
     {
         _moveTrain.Wagons.Last().Explosion();
         _moveTrain.Wagons.Remove(_moveTrain.Wagons.Last());
-
+        _moveTrain.Wagons.Last().AddComponent<LastWagon>();
         if (_moveTrain.Wagons.Count != 0) return;
-
         _moveTrain.StopTrain();
         EventManager.OnOpenedSummary(Answer.Fail);
     }

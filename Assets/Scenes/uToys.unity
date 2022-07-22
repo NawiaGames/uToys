@@ -6604,6 +6604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3620950429964263805}
   - component: {fileID: 3620950429964263804}
+  - component: {fileID: 3620950429964263806}
   m_Layer: 8
   m_Name: Trolley2
   m_TagString: Untagged
@@ -6642,6 +6643,18 @@ Transform:
   m_Father: {fileID: 3620950429946334948}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3620950429964263806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620950429964263795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740bb443f12a4674d85b8e8ddab775ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &3620950430209190648
 Rigidbody:
   m_ObjectHideFlags: 0

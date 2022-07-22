@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class CollisionLevel : MonoBehaviour
 {
+    private LastWagon _currentWagon; 
     private void OnTriggerEnter(Collider other)
     {
-        var trainHead = other.GetComponentInParent<MoveTrain>();
-        if (trainHead != null)
+        var lastWagon = other.GetComponentInParent<LastWagon>();
+        if (lastWagon != null && _currentWagon != lastWagon)
         {
-            trainHead.StopTrain();
-            var train = trainHead.GetComponentInParent<TrainController>(); 
+            var train = lastWagon.GetComponentInParent<TrainController>();
+            train.MoveTrain.StopTrain();
             train.EnableCameraLevel();
+            _currentWagon = lastWagon;
         }
     }
 }
