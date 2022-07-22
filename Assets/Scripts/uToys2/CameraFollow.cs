@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -9,5 +8,12 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.Lerp(transform.position, _transformFollow.position, _speed * Time.deltaTime);
+    }
+
+    [ContextMenu("Update Camera")]
+    public void UpdatePositionAndRotationCamera()
+    {
+        transform.position = _transformFollow.position;
+        transform.rotation = _transformFollow.rotation; 
     }
 }

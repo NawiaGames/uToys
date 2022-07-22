@@ -5,7 +5,8 @@ public class InputController : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private MoveSelectedObject _moveSelectedObject;
     [SerializeField] private AnimationController _animationController;
-    [SerializeField] private TrainController _trainController; 
+    [SerializeField] private TrainController _trainController;
+    [SerializeField] private CameraFollow _cameraFollow;
     
     private Platform _currentPlatform;
     private SelectObject _currentSelectObject;
@@ -90,6 +91,7 @@ public class InputController : MonoBehaviour
         _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
         _currentPlatform.SetIsEmpty(false);
         _animationController.StartAnimation(_currentSelectObject);
+        _cameraFollow.UpdatePositionAndRotationCamera();
         _currentPlatform = null;
     }
 
