@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 68cf1ff432169af4eac748d6849ebed6
+guid: 98926b1890129ac48a86ec94acde1b6b
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: _colorGridItems
-    second: {fileID: 2100000, guid: f8609ffc94a4d3441b00ffdc97898caf, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 1
@@ -40,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -93,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.002
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

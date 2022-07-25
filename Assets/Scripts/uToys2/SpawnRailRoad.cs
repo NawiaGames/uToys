@@ -6,7 +6,7 @@ public class SpawnRailRoad : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObjectRail;
     [SerializeField] private float _distance = 0.05f;
-    [SerializeField] private Transform _transformParentRail; 
+    [SerializeField] private CombineMeshe _combineMeshe; 
 
     private Levelq _levelq;
     private float _distanceTravelled;
@@ -15,6 +15,7 @@ public class SpawnRailRoad : MonoBehaviour
     {
         _levelq = GetComponent<Levelq>();
         Spawn();
+        _combineMeshe.Combine();
     }
 
     private void Spawn()
@@ -30,7 +31,7 @@ public class SpawnRailRoad : MonoBehaviour
             {
                 break;
             }
-            Instantiate(_gameObjectRail, position, rotation, _transformParentRail);
+            Instantiate(_gameObjectRail, position, rotation, _combineMeshe.transform);
             oldPosition = position; 
         }
     }
