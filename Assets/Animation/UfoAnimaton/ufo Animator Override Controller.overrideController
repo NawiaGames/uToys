@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ufo Animator Override Controller
+  m_Controller: {fileID: 9100000, guid: 1cb63ace5756e4c47bf41a636f0f1659, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 412d2c8e77198284aa679ffef4920088, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 51062ea2f7779d34db06a73664951030, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1def724cdf2ddd041ace54924a3e63a3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e220905d7e00413409c31410bf279835, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6089033d87d18bb4195df8bad6420fbb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 211d80a17d068d14aa0f28ab490568cb, type: 2}
