@@ -6,8 +6,9 @@ public class CombineMeshe : MonoBehaviour
 {
     public void Combine()
     {
-        var position = transform.position;
-        transform.position = Vector3.zero;
+        var myTransform = transform;
+        var position = myTransform.position;
+        myTransform.position = Vector3.zero;
         
         var meshFilters = GetComponentsInChildren<MeshFilter>();
         var combine = new CombineInstance[meshFilters.Length];
@@ -22,13 +23,13 @@ public class CombineMeshe : MonoBehaviour
         }
         
         var meshFilter = GetComponent<MeshFilter>();
-        meshFilter.mesh = new Mesh
-        {
-            indexFormat = UnityEngine.Rendering.IndexFormat.UInt32
-        };
+        meshFilter.mesh = new Mesh();
+        // {
+        //     indexFormat = UnityEngine.Rendering.IndexFormat.UInt32
+        // };
         meshFilter.mesh.CombineMeshes(combine);
-        transform.gameObject.SetActive(true);
+        myTransform.gameObject.SetActive(true);
         
-        transform.position = position;
+        myTransform.position = position;
     }
 }
