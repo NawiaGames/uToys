@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 68cf1ff432169af4eac748d6849ebed6
+guid: 8dc5f227698a39b409f12372f69d1c50
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: _colorGridItems
-    second: {fileID: 2100000, guid: f8609ffc94a4d3441b00ffdc97898caf, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 1
