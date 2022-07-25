@@ -94,6 +94,9 @@ public class InputController : MonoBehaviour
         _currentSelectObject.gameObject.SetActive(false);
         _cameraFollow.UpdatePositionAndRotationCamera();
         _currentPlatform = null;
+
+        if (MoveTrain.IndexCurrentPath == 0)
+            EventManager.OnStopTutorial();
     }
 
     private void ResetSelectObject()

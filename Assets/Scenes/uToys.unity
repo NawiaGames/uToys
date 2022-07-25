@@ -771,6 +771,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3751553739936090238, guid: df9af0c83a036664aacbb8f9cd5853af,
+        type: 3}
+      propertyPath: uiCamera
+      value: 
+      objectReference: {fileID: 1401627583}
     - target: {fileID: 6685851408559939721, guid: df9af0c83a036664aacbb8f9cd5853af,
         type: 3}
       propertyPath: m_IsActive
@@ -6594,6 +6599,7 @@ MonoBehaviour:
   _moveTrain: {fileID: 3620950430316545952}
   _deleteWagon: {fileID: 3620950430316545953}
   _creatorLevelq: {fileID: 609832483}
+  _timeStartTutorial: 0.5
 --- !u!1 &3620950429964263795
 GameObject:
   m_ObjectHideFlags: 0

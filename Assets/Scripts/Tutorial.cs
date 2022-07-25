@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using GameLib.UI;
 using UnityEngine;
@@ -70,5 +71,17 @@ public class Tutorial : MonoBehaviour
     {
         StopAllCoroutines();
         _inputOverlayTutorial.Deactivate();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.ActivatedTutorial += StartTutorial;
+        EventManager.StopTutorial += StopTutorial;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.ActivatedTutorial -= StartTutorial;
+        EventManager.StopTutorial -= StopTutorial; 
     }
 }
