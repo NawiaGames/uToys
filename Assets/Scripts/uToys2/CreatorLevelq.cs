@@ -39,8 +39,10 @@ public class CreatorLevelq : MonoBehaviour
         {
             var indexPosition = _levelsContainer[i - 1].PathCreator.path.NumPoints - 1;
             var position = _levelsContainer[i - 1].PathCreator.path.GetPoint(indexPosition);
-            var rotation = _levelsContainer[i - 1].PathCreator.path.GetRotation(0.99f);
-            _levelsContainer[i] = Instantiate(_levels[i], position, rotation, thisTransform);
+            position.x = 0;
+            position.y = 0; 
+         //   var rotation = _levelsContainer[i - 1].PathCreator.path.GetRotation(0.99f);
+            _levelsContainer[i] = Instantiate(_levels[i], position, Quaternion.identity, thisTransform);
 
             _levelsPathCreator[i] = _levelsContainer[i].PathCreator;
         }
