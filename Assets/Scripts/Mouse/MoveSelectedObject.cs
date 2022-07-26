@@ -14,7 +14,7 @@ public class MoveSelectedObject : MonoBehaviour
     {
         if (_currentSelectObject == null) return;
 
-        var objectTransform = _currentSelectObject.IsRagDollModel ? _currentSelectObject.GetTransformRagDollModel() : _currentSelectObject.gameObject.transform;
+        var objectTransform = _currentSelectObject.gameObject.transform;
         
         objectTransform.position =
             Vector3.Lerp(objectTransform.position, position, Time.deltaTime * _speedMove);
@@ -23,7 +23,7 @@ public class MoveSelectedObject : MonoBehaviour
 
     public void StartCoroutineMove(Vector3 position)
     {
-        var objectTransform = _currentSelectObject.IsRagDollModel ? _currentSelectObject.GetTransformRagDollModel() : _currentSelectObject.gameObject.transform;
+        var objectTransform =_currentSelectObject.gameObject.transform;
 
         objectTransform.DOMove(position, _speedDown).SetEase(_ease);
     }

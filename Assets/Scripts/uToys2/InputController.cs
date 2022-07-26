@@ -88,7 +88,7 @@ public class InputController : MonoBehaviour
     
     private void SetSelectObjectToPlatform()
     {
-        _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
+    //    _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
         _currentPlatform.SetIsEmpty(false);
         _animationController.StartAnimation(_currentSelectObject);
         _currentSelectObject.gameObject.SetActive(false);

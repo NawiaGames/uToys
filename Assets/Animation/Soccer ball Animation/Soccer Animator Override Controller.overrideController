@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Soccer Animator Override Controller
+  m_Controller: {fileID: 9100000, guid: 1cb63ace5756e4c47bf41a636f0f1659, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 1def724cdf2ddd041ace54924a3e63a3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 560b27eb073aab741b86d935f0334c78, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 412d2c8e77198284aa679ffef4920088, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1d4ad1951ebaaac438dc09110b01ef65, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6089033d87d18bb4195df8bad6420fbb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0c73db0c67f49504f904afd707d8ed7f, type: 2}
