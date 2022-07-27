@@ -7,8 +7,8 @@ public class InputController : MonoBehaviour
     [SerializeField] private AnimationController _animationController;
     [SerializeField] private TrainController _trainController;
     [SerializeField] private CameraFollow _cameraFollow;
-    [SerializeField] private CreatorLevelq _creatorLevelq; 
-    
+    [SerializeField] private CreatorLevelq _creatorLevelq;
+
     private Platform _currentPlatform;
     private SelectObject _currentSelectObject;
     private Raycast _raycast;
@@ -31,33 +31,34 @@ public class InputController : MonoBehaviour
             _currentSelectObject.EnableCollider(false);
 
             PlatformHandler();
-            _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Platform.ActivatePlacePlatform(_currentSelectObject.Answer);
+            _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Platform
+                .ActivatePlacePlatform(_currentSelectObject.Answer);
         }
     }
-    
+
     private void PlatformHandler()
     {
         _canPastSelectObject = false;
 
-     //   if (_currentPlatform != null && _currentPlatform.IsEmpty())
-     //       _currentPlatform.FreePlatform();
+        //   if (_currentPlatform != null && _currentPlatform.IsEmpty())
+        //       _currentPlatform.FreePlatform();
 
         _currentPlatform = _raycast.RaycastPlatform();
 
         if (_currentPlatform != null)
         {
             _canPastSelectObject = true;
-      //      _currentPlatform.ActivatePlacePlatform(_currentSelectObject.Answer);
+            //      _currentPlatform.ActivatePlacePlatform(_currentSelectObject.Answer);
         }
     }
-    
+
     private void MouseHandler()
     {
         if (Input.GetMouseButtonDown(0) && _trainController.MoveTrain.IsEndPath)
         {
             TrySetSelectObject();
         }
-        
+
         if (Input.GetMouseButtonUp(0))
         {
             _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Platform.FreePlatform();
@@ -66,14 +67,14 @@ public class InputController : MonoBehaviour
             SetObjects();
         }
     }
-    
+
     private void TrySetSelectObject()
     {
         _currentSelectObject = _raycast.StartRaycast();
         if (_currentSelectObject != null)
             _moveSelectedObject.SetSelectObject(_currentSelectObject);
     }
-    
+
     private void SetObjects()
     {
         if (_canPastSelectObject && _currentPlatform.IsEmpty())
@@ -85,13 +86,12 @@ public class InputController : MonoBehaviour
             ResetSelectObject();
         }
 
-
         _currentSelectObject = null;
     }
-    
+
     private void SetSelectObjectToPlatform()
     {
-    //    _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
+        //    _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
         _currentPlatform.SetIsEmpty(false);
         _currentPlatform.FreePlatform();
         _animationController.StartAnimation(_currentSelectObject);

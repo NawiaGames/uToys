@@ -10,9 +10,7 @@ public class CreatorLevelq : MonoBehaviour
     private PathCreator[] _levelsPathCreator;
     
     public Levelq[] Levelqs => _levelsContainer;
-    public PathCreator[] LevelsPathCreator => _levelsPathCreator;
-    
-    
+
     private void Awake()
     {
         InitializationLevel();
