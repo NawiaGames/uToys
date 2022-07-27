@@ -6,6 +6,7 @@ public class TrainController : MonoBehaviour
     [SerializeField] private DeleteWagon _deleteWagon;
     [SerializeField] private CreatorLevelq _creatorLevelq;
     [SerializeField] private float _timeStartTutorial = 0.5f;
+    [SerializeField] private CameraConstantWidth _cameraConstantWidth; 
 
     private bool _isFirstStartTutorial = true; 
     
@@ -29,11 +30,13 @@ public class TrainController : MonoBehaviour
     public void EnableCameraLevel()
     {
         _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true; 
+        _cameraConstantWidth.SetLevelCamera(_creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera);
     }
     
     public void DisableCameraLevel()
     {
         _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = false;
+        _cameraConstantWidth.SetMainCamera();
     }
 
     private void ActivateTutorial()

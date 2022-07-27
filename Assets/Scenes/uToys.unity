@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 1401627582}
   - component: {fileID: 1401627581}
   - component: {fileID: 1401627580}
+  - component: {fileID: 1401627585}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -550,6 +551,21 @@ Transform:
   m_Father: {fileID: 1538302800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 29.096, y: -40.658, z: 0}
+--- !u!114 &1401627585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401627579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df64ace6dc102c940b9d5c4017e453bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainVirtualCamera: {fileID: 1638297208}
+  DefaultResolution: {x: 1080, y: 1920}
+  WidthOrHeight: 0
 --- !u!1 &1538302799
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +894,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 0.46153846, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6636,6 +6652,7 @@ MonoBehaviour:
   _deleteWagon: {fileID: 3620950430316545953}
   _creatorLevelq: {fileID: 609832483}
   _timeStartTutorial: 0.5
+  _cameraConstantWidth: {fileID: 1401627585}
 --- !u!1 &3620950429964263795
 GameObject:
   m_ObjectHideFlags: 0

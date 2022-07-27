@@ -108,6 +108,7 @@ MonoBehaviour:
   _animator: {fileID: 4959341390117586100}
   _selectObjects: {fileID: 3046257327832979312}
   _transformSetToPlace: {fileID: 8905638118710732788}
+  _levelVirtualCamera: {fileID: 4656297582246195414}
   _outline: {fileID: 0}
   _colorOutline: {r: 0, g: 1, b: 0, a: 0.29803923}
   _widthOutline: 3
