@@ -37,14 +37,14 @@ public class MouseController : MonoBehaviour
         _canPastSelectObject = false;
 
         if (_currentPlatform != null && _currentPlatform.IsEmpty())
-            _currentPlatform.EndPlatform();
+            _currentPlatform.FreePlatform();
 
         _currentPlatform = _raycast.RaycastPlatform();
 
         if (_currentPlatform != null)
         {
             _canPastSelectObject = true;
-            _currentPlatform.StartPlatform();
+            _currentPlatform.IsPlatform();
         }
     }
 

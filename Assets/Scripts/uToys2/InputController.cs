@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour
     [SerializeField] private AnimationController _animationController;
     [SerializeField] private TrainController _trainController;
     [SerializeField] private CameraFollow _cameraFollow;
+ //   [SerializeField] private CreatorLevelq _creatorLevelq; 
     
     private Platform _currentPlatform;
     private SelectObject _currentSelectObject;
@@ -38,14 +39,14 @@ public class InputController : MonoBehaviour
         _canPastSelectObject = false;
 
         if (_currentPlatform != null && _currentPlatform.IsEmpty())
-            _currentPlatform.EndPlatform();
+            _currentPlatform.FreePlatform();
 
         _currentPlatform = _raycast.RaycastPlatform();
 
         if (_currentPlatform != null)
         {
             _canPastSelectObject = true;
-            _currentPlatform.StartPlatform();
+            _currentPlatform.IsPlatform();
         }
     }
     
@@ -90,6 +91,7 @@ public class InputController : MonoBehaviour
     {
     //    _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
         _currentPlatform.SetIsEmpty(false);
+        _currentPlatform.FreePlatform();
         _animationController.StartAnimation(_currentSelectObject);
         _currentSelectObject.gameObject.SetActive(false);
         _cameraFollow.UpdatePositionAndRotationCamera();

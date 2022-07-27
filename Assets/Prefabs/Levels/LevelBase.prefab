@@ -108,6 +108,9 @@ MonoBehaviour:
   _animator: {fileID: 4959341390117586100}
   _selectObjects: {fileID: 3046257327832979312}
   _transformSetToPlace: {fileID: 8905638118710732788}
+  _outline: {fileID: 0}
+  _colorOutline: {r: 0, g: 1, b: 0, a: 0.29803923}
+  _widthOutline: 3
 --- !u!114 &679286709224785291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 111419947665244632}
+  _levelq: {fileID: 5606984951967180334}
 --- !u!1 &1750262795172259975
 GameObject:
   m_ObjectHideFlags: 0

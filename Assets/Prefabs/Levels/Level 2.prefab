@@ -428,6 +428,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6981916518301667052}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7792821393820791741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 72cf586a1ed3d4741b8937a7552d036c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6981916518301667052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5382939507623241391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7792821393820791741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &7945171308988642653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 1750262794707605941, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
       propertyPath: m_Name
-      value: Level2
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 1750262795095280712, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
@@ -795,6 +819,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5606984951967180334, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: _outline
+      value: 
+      objectReference: {fileID: 5382939507623241391}
     - target: {fileID: 6952260469254071412, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
       propertyPath: m_LocalPosition.x
