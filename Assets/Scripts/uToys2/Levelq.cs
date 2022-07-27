@@ -12,7 +12,8 @@ public class Levelq : MonoBehaviour
     [Header("Outline")]
     [SerializeField] private Outline _outline;
     [SerializeField] private Color _colorOutline = Color.green;
-    [SerializeField] private float _widthOutline = 3f; 
+    [SerializeField] private float _widthOutline = 3f;
+    [SerializeField] private Lights _lights;
 
     public PathCreator PathCreator => _pathCreator;
     public CinemachineVirtualCamera VirtualCamera => _virtualCamera;
@@ -20,7 +21,8 @@ public class Levelq : MonoBehaviour
     public SelectObjects SelectObjects => _selectObjects;
     public Transform TransformSetToPlace => _transformSetToPlace;
     public Outline Outline => _outline;
-    public float WidthOutline => _widthOutline; 
+    public float WidthOutline => _widthOutline;
+    public Lights Lights => _lights;
 
     private void Awake()
     {

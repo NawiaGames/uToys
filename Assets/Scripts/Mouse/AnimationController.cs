@@ -43,7 +43,6 @@ public class AnimationController : MonoBehaviour
             yield return null;
         }
         
-        _trainController.MoveTrain.StartTrain();
         _trainController.EndLevel();
         
         if (selectObject.Answer == Answer.Fail)

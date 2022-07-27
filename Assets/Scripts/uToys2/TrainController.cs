@@ -7,13 +7,12 @@ public class TrainController : MonoBehaviour
     [SerializeField] private DeleteWagon _deleteWagon;
     [SerializeField] private CreatorLevelq _creatorLevelq;
     [SerializeField] private float _timeStartTutorial = 0.5f;
-    [SerializeField] private CameraConstantWidth _cameraConstantWidth; 
+    [SerializeField] private CameraConstantWidth _cameraConstantWidth;
+    [SerializeField] private float _waitTimeStarTrain = 1f; 
 
     private bool _isFirstStartTutorial = true;
     private ParticleSystemSmoke _particleSystemSmoke;
 
-    public ParticleSystemSmoke ParticleSystemSmoke => _particleSystemSmoke; 
-    
     public MoveTrain MoveTrain => _moveTrain; 
 
     private void Start()
@@ -36,15 +35,25 @@ public class TrainController : MonoBehaviour
     {
         _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true; 
         _cameraConstantWidth.SetLevelCamera(_creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera);
+        
         _particleSystemSmoke.ReduceParticles();
+        
+        
     }
     
     public void EndLevel()
     {
         _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = false;
         _cameraConstantWidth.SetMainCamera();
+        
         _particleSystemSmoke.IncreaseParticles();
+        
+        _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Lights.EnableGreenColor();
+        
+        Invoke("StartTrain", _waitTimeStarTrain);
     }
+
+    private void StartTrain() => MoveTrain.StartTrain();
 
     private void ActivateTutorial()
     {

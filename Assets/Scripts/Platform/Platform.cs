@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] private Renderer _renderer;
+ //   [SerializeField] private Renderer _renderer;
     [SerializeField] private Levelq _levelq; 
     private bool _isEmpty = true;
 
