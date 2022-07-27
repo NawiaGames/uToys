@@ -10,7 +10,7 @@ public class CollisionLevel : MonoBehaviour
         {
             var train = lastWagon.GetComponentInParent<TrainController>();
             train.MoveTrain.StopTrain();
-            train.EnableCameraLevel();
+            train.BeginLevel();
             _currentWagon = lastWagon;
         }
     }

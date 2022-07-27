@@ -96,7 +96,7 @@ public class MouseController : MonoBehaviour
     {
         _moveSelectedObject.StartCoroutineMove(_currentPlatform.gameObject.transform.position);
         var trainPath = _levelsCreate.LevelsContainer[LevelsLoad.CurrentLevel].FollowerPath;
-        _animationController.StartAnimationEndLevel(_currentSelectObject, trainPath);
+ //       _animationController.StartAnimationEndLevel(_currentSelectObject, trainPath);
         _currentPlatform.SetIsEmpty(false);
         _currentPlatform = null;
         

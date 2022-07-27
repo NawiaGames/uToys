@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ParticleSystemSmoke))]
 public class TrainController : MonoBehaviour
 {
     [SerializeField] private MoveTrain _moveTrain;
@@ -8,12 +9,16 @@ public class TrainController : MonoBehaviour
     [SerializeField] private float _timeStartTutorial = 0.5f;
     [SerializeField] private CameraConstantWidth _cameraConstantWidth; 
 
-    private bool _isFirstStartTutorial = true; 
+    private bool _isFirstStartTutorial = true;
+    private ParticleSystemSmoke _particleSystemSmoke;
+
+    public ParticleSystemSmoke ParticleSystemSmoke => _particleSystemSmoke; 
     
     public MoveTrain MoveTrain => _moveTrain; 
 
     private void Start()
     {
+        _particleSystemSmoke = GetComponent<ParticleSystemSmoke>();
         _moveTrain.StartPositionWagons();
     }
 
@@ -27,16 +32,18 @@ public class TrainController : MonoBehaviour
 
     public void DeleteLastWagon() => _deleteWagon.DeleteLastWagon();
 
-    public void EnableCameraLevel()
+    public void BeginLevel()
     {
         _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true; 
         _cameraConstantWidth.SetLevelCamera(_creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera);
+        _particleSystemSmoke.ReduceParticles();
     }
     
-    public void DisableCameraLevel()
+    public void EndLevel()
     {
         _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = false;
         _cameraConstantWidth.SetMainCamera();
+        _particleSystemSmoke.IncreaseParticles();
     }
 
     private void ActivateTutorial()
