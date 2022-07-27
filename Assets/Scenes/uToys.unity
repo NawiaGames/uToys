@@ -1014,6 +1014,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9127842404370544638, guid: 8f468f180cb620f40a606618d117b13f,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127842404370544638, guid: 8f468f180cb620f40a606618d117b13f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f468f180cb620f40a606618d117b13f, type: 3}
 --- !u!1001 &3285443038474862460
@@ -1207,6 +1217,11 @@ PrefabInstance:
       propertyPath: _cameraFollow
       value: 
       objectReference: {fileID: 1538302801}
+    - target: {fileID: 6639098982648049414, guid: c23908c9a99bb734b84f676f1882f97b,
+        type: 3}
+      propertyPath: _creatorLevelq
+      value: 
+      objectReference: {fileID: 609832483}
     - target: {fileID: 6639098982648049414, guid: c23908c9a99bb734b84f676f1882f97b,
         type: 3}
       propertyPath: _trainController

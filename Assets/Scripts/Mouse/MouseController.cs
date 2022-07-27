@@ -44,7 +44,7 @@ public class MouseController : MonoBehaviour
         if (_currentPlatform != null)
         {
             _canPastSelectObject = true;
-            _currentPlatform.IsPlatform();
+   //         _currentPlatform.ActivatePlacePlatform();
         }
     }
 

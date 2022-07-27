@@ -7,7 +7,7 @@ public class InputController : MonoBehaviour
     [SerializeField] private AnimationController _animationController;
     [SerializeField] private TrainController _trainController;
     [SerializeField] private CameraFollow _cameraFollow;
- //   [SerializeField] private CreatorLevelq _creatorLevelq; 
+    [SerializeField] private CreatorLevelq _creatorLevelq; 
     
     private Platform _currentPlatform;
     private SelectObject _currentSelectObject;
@@ -31,6 +31,7 @@ public class InputController : MonoBehaviour
             _currentSelectObject.EnableCollider(false);
 
             PlatformHandler();
+            _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Platform.ActivatePlacePlatform(_currentSelectObject.Answer);
         }
     }
     
@@ -38,15 +39,15 @@ public class InputController : MonoBehaviour
     {
         _canPastSelectObject = false;
 
-        if (_currentPlatform != null && _currentPlatform.IsEmpty())
-            _currentPlatform.FreePlatform();
+     //   if (_currentPlatform != null && _currentPlatform.IsEmpty())
+     //       _currentPlatform.FreePlatform();
 
         _currentPlatform = _raycast.RaycastPlatform();
 
         if (_currentPlatform != null)
         {
             _canPastSelectObject = true;
-            _currentPlatform.IsPlatform();
+      //      _currentPlatform.ActivatePlacePlatform(_currentSelectObject.Answer);
         }
     }
     
@@ -59,6 +60,7 @@ public class InputController : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0))
         {
+            _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Platform.FreePlatform();
             if (_currentSelectObject == null) return;
 
             SetObjects();
