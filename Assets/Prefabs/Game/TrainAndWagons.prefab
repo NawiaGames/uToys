@@ -5224,8 +5224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 7763620387448064571}
-  _forceUp: 15
-  _torque: 5
+  _forceUp: 250
+  _torque: 150
 --- !u!1 &1674877800091168375
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,8 +5344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 3913438858132101622}
-  _forceUp: 15
-  _torque: 5
+  _forceUp: 250
+  _torque: 150
 --- !u!114 &1674877800113340434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5486,8 +5486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 4640489163602809796}
-  _forceUp: 15
-  _torque: 5
+  _forceUp: 250
+  _torque: 150
 --- !u!1 &1779816940520253713
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,7 +6622,7 @@ PrefabInstance:
     - target: {fileID: 3915678169010647434, guid: 83f76768e5caed0418c89270d5d78098,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.292
+      value: 0.35399997
       objectReference: {fileID: 0}
     - target: {fileID: 3915678169010647434, guid: 83f76768e5caed0418c89270d5d78098,
         type: 3}
@@ -6824,7 +6824,7 @@ PrefabInstance:
     - target: {fileID: 3915678169010647434, guid: 83f76768e5caed0418c89270d5d78098,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.292
+      value: 0.354
       objectReference: {fileID: 0}
     - target: {fileID: 3915678169010647434, guid: 83f76768e5caed0418c89270d5d78098,
         type: 3}
@@ -6945,7 +6945,7 @@ PrefabInstance:
     - target: {fileID: 3915678169010647434, guid: 83f76768e5caed0418c89270d5d78098,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.292
+      value: 0.35399997
       objectReference: {fileID: 0}
     - target: {fileID: 3915678169010647434, guid: 83f76768e5caed0418c89270d5d78098,
         type: 3}
