@@ -5370,6 +5370,7 @@ GameObject:
   - component: {fileID: 1674877800532682444}
   - component: {fileID: 1674877800532682485}
   - component: {fileID: 1674877800532682445}
+  - component: {fileID: 4812252762171213114}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -5407,7 +5408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2694a95355e1340b4ce665679a950c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _maxSpeed: 7
+  _minSpeed: 2
+  _speedChange: 1.5
   _wagons:
   - {fileID: 1674877799720058117}
   - {fileID: 1674877800631431607}
@@ -5439,6 +5442,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3484fbbcd626d145a42019e5adff2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4812252762171213114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674877800532682481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2c2d7ee9edb0443b442ef5dface801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trainController: {fileID: 1674877800091168368}
 --- !u!1 &1674877800631431605
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,6 +5600,7 @@ GameObject:
   - component: {fileID: 71998072852781150}
   - component: {fileID: 1674877799447063488}
   - component: {fileID: 1674877799447063489}
+  - component: {fileID: 8363624385393847841}
   m_Layer: 8
   m_Name: locomotive
   m_TagString: Untagged
@@ -5690,6 +5707,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8336599035457844097, guid: b7fd5e05593a6114aa21219858ef0ffc, type: 3}
+--- !u!114 &8363624385393847841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017390177685125515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2c2d7ee9edb0443b442ef5dface801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trainController: {fileID: 1674877800091168368}
 --- !u!1 &2017390178002705378
 GameObject:
   m_ObjectHideFlags: 0

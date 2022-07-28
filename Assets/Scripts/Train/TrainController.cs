@@ -33,10 +33,13 @@ public class TrainController : MonoBehaviour
 
     public void BeginLevel()
     {
+        _particleSystemSmoke.ReduceParticles();
+    }
+
+    public void EnableVirtualCamera()
+    {
         _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true;
         _cameraConstantWidth.SetLevelCamera(_creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera);
-
-        _particleSystemSmoke.ReduceParticles();
     }
 
     public void EndLevel()

@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using PathCreation;
@@ -5,14 +7,17 @@ using UnityEngine;
 
 public class MoveTrain : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _maxSpeed = 5f;
+    [SerializeField] private float _minSpeed = 2f;
+    [SerializeField] private float _speedChange = 8f; 
     [SerializeField] private List<Wagon> _wagons;
 
     private PathCreator[] _pathCreator;
     private float _distanceTravelled;
     private bool _isEndPath;
     private int _indexCurrentPath;
-    private Vector3 _maxPosition; 
+    private Vector3 _maxPositionPath;
+    private float _currentSpeed = 2f; 
 
     public bool IsEndPath => _isEndPath;
     public List<Wagon> Wagons => _wagons;
@@ -21,8 +26,14 @@ public class MoveTrain : MonoBehaviour
 
     private void Awake()
     {
+        _currentSpeed = _minSpeed;
         IndexCurrentPath = _indexCurrentPath; 
-        _maxPosition = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
+        _maxPositionPath = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
+    }
+
+    private void Start()
+    {
+        IncreaseMaxSpeed(); 
     }
 
     public void MoveWagonsAndHead()
@@ -36,8 +47,8 @@ public class MoveTrain : MonoBehaviour
             var tempRotation = vanTransform.rotation;
             var tempPosition = vanTransform.position;
             wagon.transform.rotation =
-                Quaternion.Lerp(vanTransform.rotation, previousRotation, _speed * Time.deltaTime);
-            wagon.transform.position = Vector3.Lerp(vanTransform.position, previousPosition, _speed * Time.deltaTime);
+                Quaternion.Lerp(vanTransform.rotation, previousRotation, _currentSpeed * Time.deltaTime);
+            wagon.transform.position = Vector3.Lerp(vanTransform.position, previousPosition, _currentSpeed * Time.deltaTime);
 
             previousPosition = tempPosition;
             previousRotation = tempRotation;
@@ -48,7 +59,7 @@ public class MoveTrain : MonoBehaviour
 
     private void MoveHeadPath()
     {
-        _distanceTravelled += _speed * Time.deltaTime;
+        _distanceTravelled += _currentSpeed * Time.deltaTime;
         var nextPosition = _pathCreator[_indexCurrentPath].path
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
 
@@ -56,11 +67,11 @@ public class MoveTrain : MonoBehaviour
         transform.rotation = _pathCreator[_indexCurrentPath].path
             .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
         
-        if (_maxPosition == transform.position && _pathCreator.Length > _indexCurrentPath + 1)
+        if (_maxPositionPath == transform.position && _pathCreator.Length > _indexCurrentPath + 1)
         {
             NextPath();
         }
-        else if (transform.position == _maxPosition)
+        else if (transform.position == _maxPositionPath)
         {
             StopTrain();
             EventManager.OnOpenedSummary(Answer.Win);
@@ -85,7 +96,7 @@ public class MoveTrain : MonoBehaviour
     {
         _distanceTravelled = 0f; 
         _indexCurrentPath++;
-        _maxPosition = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
+        _maxPositionPath = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
         IndexCurrentPath = _indexCurrentPath;
     }
 
@@ -99,5 +110,45 @@ public class MoveTrain : MonoBehaviour
 
     public void StopTrain() => _isEndPath = true;
 
-    public void StartTrain() => _isEndPath = false;
+    public void StartTrain()
+    {
+        _isEndPath = false;
+        IncreaseMaxSpeed(); 
+    } 
+
+    public void ReduceMinSpeed()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ReduceSpeedCoroutine());
+    }
+
+    private IEnumerator ReduceSpeedCoroutine()
+    {
+        _currentSpeed = _maxSpeed; 
+
+        while (_currentSpeed >= _minSpeed)
+        {
+            yield return null;
+            _currentSpeed -= Time.deltaTime * _speedChange; 
+            Debug.Log(_currentSpeed);
+        }
+    }
+
+    public void IncreaseMaxSpeed()
+    {
+        StopAllCoroutines();
+        StartCoroutine(IncreaseSpeedCoroutine());
+    }
+
+    private IEnumerator IncreaseSpeedCoroutine()
+    {
+        _currentSpeed = _minSpeed; 
+        while (_currentSpeed <= _maxSpeed)
+        {
+            yield return null;
+            _currentSpeed += Time.deltaTime * _speedChange; 
+            Debug.Log(_currentSpeed);
+        }
+    }
+    
 }

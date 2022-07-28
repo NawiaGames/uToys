@@ -1322,6 +1322,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5362629848120447702, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.23
+      objectReference: {fileID: 0}
     - target: {fileID: 5606984951967180334, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
       propertyPath: _outline
