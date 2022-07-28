@@ -12,6 +12,7 @@ public class MoveTrain : MonoBehaviour
     private float _distanceTravelled;
     private bool _isEndPath;
     private int _indexCurrentPath;
+    private Vector3 _maxPosition; 
 
     public bool IsEndPath => _isEndPath;
     public List<Wagon> Wagons => _wagons;
@@ -21,6 +22,7 @@ public class MoveTrain : MonoBehaviour
     private void Awake()
     {
         IndexCurrentPath = _indexCurrentPath; 
+        _maxPosition = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
     }
 
     public void MoveWagonsAndHead()
@@ -50,19 +52,19 @@ public class MoveTrain : MonoBehaviour
         var nextPosition = _pathCreator[_indexCurrentPath].path
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
 
-        if (transform.position == nextPosition && _pathCreator.Length > _indexCurrentPath + 1)
+        transform.position = nextPosition;
+        transform.rotation = _pathCreator[_indexCurrentPath].path
+            .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
+        
+        if (_maxPosition == transform.position && _pathCreator.Length > _indexCurrentPath + 1)
         {
             NextPath();
         }
-        else if (transform.position == nextPosition)
+        else if (transform.position == _maxPosition)
         {
             StopTrain();
             EventManager.OnOpenedSummary(Answer.Win);
         }
-
-        transform.position = nextPosition;
-        transform.rotation = _pathCreator[_indexCurrentPath].path
-            .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
     }
 
     public void StartPositionWagons()
@@ -81,10 +83,9 @@ public class MoveTrain : MonoBehaviour
 
     private void NextPath()
     {
+        _distanceTravelled = 0f; 
         _indexCurrentPath++;
-        _distanceTravelled = 0.01f;
-        StartTrain();
-
+        _maxPosition = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
         IndexCurrentPath = _indexCurrentPath;
     }
 
@@ -99,6 +100,4 @@ public class MoveTrain : MonoBehaviour
     public void StopTrain() => _isEndPath = true;
 
     public void StartTrain() => _isEndPath = false;
-
-
 }
