@@ -722,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 1750262795095280712, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
       propertyPath: editorData.vertexPathUpToDate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1750262795095280712, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
@@ -1413,6 +1413,72 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_RawSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c9de2e8f2e66964aa8b661852d519b2,
+        type: 2}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_AttackTime
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_SustainTime
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayShape.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_AttackShape.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayShape.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_AttackShape.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayShape.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_AttackShape.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayShape.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_AttackShape.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayShape.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774151200341556563, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_AttackShape.m_Curve.Array.data[1].outSlope
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1984772481905232232, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}

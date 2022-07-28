@@ -1,19 +1,19 @@
 using PathCreation;
 using UnityEngine;
 
-[RequireComponent(typeof(Levelq))]
+[RequireComponent(typeof(Level))]
 public class SpawnRailRoad : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObjectRail;
     [SerializeField] private float _distance = 0.05f;
     [SerializeField] private CombineMeshe _combineMeshe; 
 
-    private Levelq _levelq;
+    private Level _level;
     private float _distanceTravelled;
 
     private void Start()
     {
-        _levelq = GetComponent<Levelq>();
+        _level = GetComponent<Level>();
         Spawn();
         _combineMeshe.Combine();
     }
@@ -25,8 +25,8 @@ public class SpawnRailRoad : MonoBehaviour
         while (true)
         {
             _distanceTravelled += _distance;
-            var position = _levelq.PathCreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-            var rotation = _levelq.PathCreator.path.GetRotationAtDistance(_distanceTravelled,  EndOfPathInstruction.Stop);
+            var position = _level.PathCreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
+            var rotation = _level.PathCreator.path.GetRotationAtDistance(_distanceTravelled,  EndOfPathInstruction.Stop);
             if (oldPosition == position)
             {
                 break;

@@ -1,15 +1,15 @@
 using PathCreation;
 using UnityEngine;
 
-public class CreatorLevelq : MonoBehaviour
+public class CreatorLevel : MonoBehaviour
 {
     [SerializeField] private TrainController _trainController;
-    [SerializeField] private Levelq[] _levels;
+    [SerializeField] private Level[] _levels;
 
-    private Levelq[] _levelsContainer;
+    private Level[] _levelsContainer;
     private PathCreator[] _levelsPathCreator;
     
-    public Levelq[] Levelqs => _levelsContainer;
+    public Level[] Levelqs => _levelsContainer;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class CreatorLevelq : MonoBehaviour
     private void InitializationLevel()
     {
         var size = _levels.Length;
-        _levelsContainer = new Levelq[size];
+        _levelsContainer = new Level[size];
         _levelsPathCreator = new PathCreator[size];
         
         CreateLevel(size);

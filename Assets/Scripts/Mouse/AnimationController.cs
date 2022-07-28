@@ -5,13 +5,14 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private TrainController _trainController;
-    [SerializeField] private CreatorLevelq _creatorLevelq;
 
+    private CreatorLevel _creatorLevel;
     private const string AnimationWin = "Win";
     private const string AnimationFail = "Fail";
     
     public static bool IsPlayingAnimation = true;
-    
+
+    public void SetCreatorLevel(CreatorLevel creatorLevel) => _creatorLevel = creatorLevel; 
 
     public void StartAnimation(SelectObject selectObject)
     {
@@ -27,10 +28,10 @@ public class AnimationController : MonoBehaviour
         switch (selectObject.Answer)
         {
             case Answer.Fail:
-                _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationFail);
+                _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationFail);
                 break;
             case Answer.Win:
-                _creatorLevelq.Levelqs[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationWin);
+                _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationWin);
                 break;
             case Answer.King:
                 break;

@@ -2,7 +2,7 @@ using Cinemachine;
 using PathCreation;
 using UnityEngine;
 
-public class Levelq : MonoBehaviour
+public class Level : MonoBehaviour
 {
     [SerializeField] private PathCreator _pathCreator;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
