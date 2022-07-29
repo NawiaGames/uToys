@@ -338,6 +338,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 3-giant
       objectReference: {fileID: 0}
+    - target: {fileID: 1750262795095280712, guid: fd036ef289dadf143b49452d5eb73738,
+        type: 3}
+      propertyPath: editorData.vertexPathUpToDate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1750262795099987823, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
       propertyPath: _answer

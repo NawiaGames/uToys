@@ -130,7 +130,7 @@ public class MoveTrain : MonoBehaviour
         {
             yield return null;
             _currentSpeed -= Time.deltaTime * _speedChange; 
-            Debug.Log(_currentSpeed);
+  //          Debug.Log(_currentSpeed);
         }
     }
 
@@ -147,7 +147,7 @@ public class MoveTrain : MonoBehaviour
         {
             yield return null;
             _currentSpeed += Time.deltaTime * _speedChange; 
-            Debug.Log(_currentSpeed);
+//            Debug.Log(_currentSpeed);
         }
     }
     

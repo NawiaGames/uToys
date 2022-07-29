@@ -15,7 +15,6 @@ public class TriggerTrain : MonoBehaviour
         var reduceSpeedBox = other.GetComponent<ReduceSpeedBox>();
         if (reduceSpeedBox != null)
         {
-            Debug.Log("reduce");
             _trainController.MoveTrain.ReduceMinSpeed();
             _trainController.EnableVirtualCamera();
         }
