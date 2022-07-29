@@ -6,7 +6,6 @@ public class TrainController : MonoBehaviour
     [SerializeField] private MoveTrain _moveTrain;
     [SerializeField] private DeleteWagon _deleteWagon;
     [SerializeField] private CreatorLevel _creatorLevel;
-    [SerializeField] private float _timeStartTutorial = 0.5f;
     [SerializeField] private CameraConstantWidth _cameraConstantWidth;
     [SerializeField] private float _waitTimeStarTrain = 1f;
 
@@ -26,7 +25,7 @@ public class TrainController : MonoBehaviour
         if (!_moveTrain.IsStopTrain)
             _moveTrain.MoveWagonsAndHead();
         else if (MoveTrain.IndexCurrentPath == 0 && _isFirstStartTutorial)
-            Invoke("ActivateTutorial", _timeStartTutorial);
+            ActivateTutorial();
     }
 
     public void DeleteLastWagon() => _deleteWagon.DeleteLastWagon();
