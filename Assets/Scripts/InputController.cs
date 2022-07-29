@@ -55,7 +55,7 @@ public class InputController : MonoBehaviour
 
     private void MouseHandler()
     {
-        if (Input.GetMouseButtonDown(0) && _trainController.MoveTrain.IsEndPath)
+        if (Input.GetMouseButtonDown(0) && _trainController.MoveTrain.IsStopTrain)
         {
             TrySetSelectObject();
         }

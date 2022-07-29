@@ -14,12 +14,12 @@ public class MoveTrain : MonoBehaviour
 
     private PathCreator[] _pathCreator;
     private float _distanceTravelled;
-    private bool _isEndPath;
+    private bool _isStopTrain;
     private int _indexCurrentPath;
     private Vector3 _maxPositionPath;
     private float _currentSpeed = 2f; 
 
-    public bool IsEndPath => _isEndPath;
+    public bool IsStopTrain => _isStopTrain;
     public List<Wagon> Wagons => _wagons;
     
     public static int IndexCurrentPath;
@@ -108,11 +108,11 @@ public class MoveTrain : MonoBehaviour
             _pathCreator[i] = pathCreators[i];
     }
 
-    public void StopTrain() => _isEndPath = true;
+    public void StopTrain() => _isStopTrain = true;
 
     public void StartTrain()
     {
-        _isEndPath = false;
+        _isStopTrain = false;
         IncreaseMaxSpeed(); 
     } 
 
@@ -134,7 +134,7 @@ public class MoveTrain : MonoBehaviour
         }
     }
 
-    public void IncreaseMaxSpeed()
+    private void IncreaseMaxSpeed()
     {
         StopAllCoroutines();
         StartCoroutine(IncreaseSpeedCoroutine());

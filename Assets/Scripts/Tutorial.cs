@@ -8,7 +8,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private InputOverlayTutorial _inputOverlayTutorial;
     [SerializeField] private float _timeNextStep = 1f;
 
-    private bool _isHoldBack; 
+    private bool _isHoldBack;
 
     public void StartTutorial(Vector3[] positions, Vector3 positionDragDrop)
     {
@@ -19,7 +19,8 @@ public class Tutorial : MonoBehaviour
     private IEnumerator HandlerTutorial(Vector3[] positions, Vector3 positionDragDrop)
     {
         var coroutine = StartTutorialCoroutine(positions, positionDragDrop);
-        StartCoroutine(coroutine);
+        if (!Input.GetMouseButton(0))
+            StartCoroutine(coroutine);
 
         var _timer = 0f;
 
@@ -28,7 +29,7 @@ public class Tutorial : MonoBehaviour
             yield return null;
             if (Input.GetMouseButtonDown(0))
             {
-                _isHoldBack = true; 
+                _isHoldBack = true;
                 _inputOverlayTutorial.Deactivate();
                 StopCoroutine(coroutine);
             }
@@ -49,7 +50,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator StartTutorialCoroutine(Vector3[] positions, Vector3 positionDragDrop)
     {
-        yield return new WaitForSeconds(_timeNextStep / 2);
+        //   yield return new WaitForSeconds(_timeNextStep / 2);
 
         foreach (var position in positions)
         {
@@ -82,6 +83,6 @@ public class Tutorial : MonoBehaviour
     private void OnDisable()
     {
         EventManager.ActivatedTutorial -= StartTutorial;
-        EventManager.StopTutorial -= StopTutorial; 
+        EventManager.StopTutorial -= StopTutorial;
     }
 }

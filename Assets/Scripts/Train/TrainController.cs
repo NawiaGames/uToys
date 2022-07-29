@@ -23,7 +23,7 @@ public class TrainController : MonoBehaviour
 
     private void Update()
     {
-        if (!_moveTrain.IsEndPath)
+        if (!_moveTrain.IsStopTrain)
             _moveTrain.MoveWagonsAndHead();
         else if (MoveTrain.IndexCurrentPath == 0 && _isFirstStartTutorial)
             Invoke("ActivateTutorial", _timeStartTutorial);
