@@ -20,7 +20,13 @@ public class Tutorial : MonoBehaviour
     {
         var coroutine = StartTutorialCoroutine(positions, positionDragDrop);
         if (!Input.GetMouseButton(0))
+        {
             StartCoroutine(coroutine);
+        }
+        else
+        {
+            _isHoldBack = true;
+        }
 
         var _timer = 0f;
 
@@ -50,15 +56,13 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator StartTutorialCoroutine(Vector3[] positions, Vector3 positionDragDrop)
     {
-        //   yield return new WaitForSeconds(_timeNextStep / 2);
-
         foreach (var position in positions)
         {
             _inputOverlayTutorial.Activate(position);
             yield return new WaitForSeconds(_timeNextStep);
         }
 
-        var dragDrop = new Vector3[]
+        var dragDrop = new[]
         {
             positions[^1],
             positionDragDrop
@@ -68,7 +72,7 @@ public class Tutorial : MonoBehaviour
         _inputOverlayTutorial.Deactivate();
     }
 
-    public void StopTutorial()
+    private void StopTutorial()
     {
         StopAllCoroutines();
         _inputOverlayTutorial.Deactivate();
