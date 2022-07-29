@@ -112,7 +112,8 @@ public class MoveTrain : MonoBehaviour
 
     public void StartTrain()
     {
-        _isStopTrain = false;
+        if(_wagons.Count >= 1)
+            _isStopTrain = false;
         IncreaseMaxSpeed(); 
     } 
 
