@@ -32,7 +32,7 @@ public class InputController : MonoBehaviour
             _currentSelectObject.EnableCollider(false);
 
             PlatformHandler();
-            _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Platform
+            _creatorLevel.Levels[MoveTrain.IndexCurrentPath].Platform
                 .ActivatePlacePlatform(_currentSelectObject.Answer);
         }
     }
@@ -62,7 +62,7 @@ public class InputController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Platform.FreePlatform();
+            _creatorLevel.Levels[MoveTrain.IndexCurrentPath].Platform.FreePlatform();
             if (_currentSelectObject == null) return;
 
             SetObjects();

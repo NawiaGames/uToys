@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using PathCreation;
 using UnityEngine;
 
@@ -5,11 +6,12 @@ public class CreatorLevel : MonoBehaviour
 {
     [SerializeField] private TrainController _trainController;
     [SerializeField] private Level[] _levels;
-
+    [SerializeField] private PathCreator _pathCreator; 
+    
     private Level[] _levelsContainer;
     private PathCreator[] _levelsPathCreator;
-    
-    public Level[] Levelqs => _levelsContainer;
+    private List<Vector3> _listVectorsPath; 
+    public Level[] Levels => _levelsContainer;
 
     private void Awake()
     {
@@ -23,8 +25,9 @@ public class CreatorLevel : MonoBehaviour
         _levelsPathCreator = new PathCreator[size];
         
         CreateLevel(size);
-        
-        _trainController.MoveTrain.SetPathCreators(_levelsPathCreator);
+        CreatePath(size);
+
+        _trainController.MoveTrain.SetPathCreator(_pathCreator);
     }
 
     private void CreateLevel(int size)
@@ -44,5 +47,27 @@ public class CreatorLevel : MonoBehaviour
 
             _levelsPathCreator[i] = _levelsContainer[i].PathCreator;
         }
+
+    }
+
+    private void CreatePath(int size)
+    {
+        _listVectorsPath = new List<Vector3>();
+        for (int i = 0; i < size; i++)
+        {
+            foreach (var vector3 in _levelsPathCreator[i].path.localPoints)
+            {
+                var worldPosition = _levelsPathCreator[i].transform.TransformPoint(vector3);
+                _levelsPathCreator[i].gameObject.SetActive(false);
+
+                _listVectorsPath.Add(worldPosition);
+            }
+        }
+
+        var bezierPath = new BezierPath(_listVectorsPath.ToArray(), false, PathSpace.xyz)
+        {
+            GlobalNormalsAngle = 90
+        };
+        _pathCreator.bezierPath = bezierPath;
     }
 }

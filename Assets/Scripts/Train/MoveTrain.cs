@@ -12,7 +12,7 @@ public class MoveTrain : MonoBehaviour
     [SerializeField] private float _speedChange = 8f; 
     [SerializeField] private List<Wagon> _wagons;
 
-    private PathCreator[] _pathCreator;
+    private PathCreator _pathCreator; 
     private float _distanceTravelled;
     private bool _isStopTrain;
     private int _indexCurrentPath;
@@ -28,7 +28,7 @@ public class MoveTrain : MonoBehaviour
     {
         _currentSpeed = _minSpeed;
         IndexCurrentPath = _indexCurrentPath; 
-        _maxPositionPath = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
+        _maxPositionPath = _pathCreator.path.GetPoint(_pathCreator.path.NumPoints - 1);
     }
 
     private void Start()
@@ -60,28 +60,29 @@ public class MoveTrain : MonoBehaviour
     private void MoveHeadPath()
     {
         _distanceTravelled += _currentSpeed * Time.deltaTime;
-        var nextPosition = _pathCreator[_indexCurrentPath].path
+        var nextPosition = _pathCreator.path
             .GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-
+        
         transform.position = nextPosition;
-        transform.rotation = _pathCreator[_indexCurrentPath].path
+        transform.rotation = _pathCreator.path
             .GetRotationAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
         
-        if (_maxPositionPath == transform.position && _pathCreator.Length > _indexCurrentPath + 1)
+        if (transform.position == _maxPositionPath)
         {
-            NextPath();
+            FinishPath();
         }
-        else if (transform.position == _maxPositionPath)
-        {
-            StopTrain();
-            EventManager.OnOpenedSummary(Answer.Win);
-        }
+    }
+
+    private void FinishPath()
+    {
+        StopTrain();
+        EventManager.OnOpenedSummary(Answer.Win);
     }
 
     public void StartPositionWagons()
     {
-        var position = _pathCreator[_indexCurrentPath].path.GetPointAtDistance(0);
-        var rotation = _pathCreator[_indexCurrentPath].path.GetRotationAtDistance(0);
+        var position = _pathCreator.path.GetPointAtDistance(0);
+        var rotation = _pathCreator.path.GetRotationAtDistance(0);
         var backOffset = Vector3.back;
         foreach (var transformWagon in _wagons.Select(wagon => wagon.transform))
         {
@@ -92,28 +93,22 @@ public class MoveTrain : MonoBehaviour
         }
     }
 
-    private void NextPath()
+    public void SetPathCreator(PathCreator pathCreators)
     {
-        _distanceTravelled = 0f; 
-        _indexCurrentPath++;
-        _maxPositionPath = _pathCreator[_indexCurrentPath].path.GetPoint(_pathCreator[_indexCurrentPath].path.NumPoints - 1);
-        IndexCurrentPath = _indexCurrentPath;
-    }
-
-    public void SetPathCreators(PathCreator[] pathCreators)
-    {
-        _pathCreator = new PathCreator[pathCreators.Length];
-
-        for (var i = 0; i < pathCreators.Length; i++)
-            _pathCreator[i] = pathCreators[i];
+        _pathCreator = new PathCreator();
+        _pathCreator = pathCreators;
     }
 
     public void StopTrain() => _isStopTrain = true;
 
     public void StartTrain()
     {
-        if(_wagons.Count >= 1)
+        if (_wagons.Count >= 1)
+        {
             _isStopTrain = false;
+            _indexCurrentPath++;
+            IndexCurrentPath = _indexCurrentPath;
+        }
         IncreaseMaxSpeed(); 
     } 
 
@@ -131,7 +126,6 @@ public class MoveTrain : MonoBehaviour
         {
             yield return null;
             _currentSpeed -= Time.deltaTime * _speedChange; 
-  //          Debug.Log(_currentSpeed);
         }
     }
 
@@ -148,7 +142,6 @@ public class MoveTrain : MonoBehaviour
         {
             yield return null;
             _currentSpeed += Time.deltaTime * _speedChange; 
-//            Debug.Log(_currentSpeed);
         }
     }
     

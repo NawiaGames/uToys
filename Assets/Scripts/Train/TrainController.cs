@@ -37,18 +37,18 @@ public class TrainController : MonoBehaviour
 
     public void EnableVirtualCamera()
     {
-        _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true;
-        _cameraConstantWidth.SetLevelCamera(_creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera);
+        _creatorLevel.Levels[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = true;
+        _cameraConstantWidth.SetLevelCamera(_creatorLevel.Levels[MoveTrain.IndexCurrentPath].VirtualCamera);
     }
 
     public void EndLevel()
     {
-        _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = false;
+        _creatorLevel.Levels[MoveTrain.IndexCurrentPath].VirtualCamera.enabled = false;
         _cameraConstantWidth.SetMainCamera();
 
         _particleSystemSmoke.IncreaseParticles();
 
-        _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Lights.EnableGreenColor();
+        _creatorLevel.Levels[MoveTrain.IndexCurrentPath].Lights.EnableGreenColor();
 
         Invoke("StartTrain", _waitTimeStarTrain);
     }
@@ -57,11 +57,11 @@ public class TrainController : MonoBehaviour
 
     private void ActivateTutorial()
     {
-        var selectObject = _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].SelectObjects.SelectObjectsGame;
+        var selectObject = _creatorLevel.Levels[MoveTrain.IndexCurrentPath].SelectObjects.SelectObjectsGame;
         var positions = new Vector3[selectObject.Length];
         for (var i = 0; i < positions.Length; i++)
             positions[i] = selectObject[i].transform.position;
-        var positionDragDrop = _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].TransformSetToPlace.position;
+        var positionDragDrop = _creatorLevel.Levels[MoveTrain.IndexCurrentPath].TransformSetToPlace.position;
         EventManager.OnActivatedTutorial(positions, positionDragDrop);
 
         _isFirstStartTutorial = false;

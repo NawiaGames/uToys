@@ -28,10 +28,10 @@ public class AnimationController : MonoBehaviour
         switch (selectObject.Answer)
         {
             case Answer.Fail:
-                _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationFail);
+                _creatorLevel.Levels[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationFail);
                 break;
             case Answer.Win:
-                _creatorLevel.Levelqs[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationWin);
+                _creatorLevel.Levels[MoveTrain.IndexCurrentPath].Animator.SetTrigger(AnimationWin);
                 break;
             case Answer.King:
                 break;
