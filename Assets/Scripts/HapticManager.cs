@@ -45,25 +45,25 @@ public class HapticManager : MonoBehaviour
 
     public static void VibLo(object sender)
     {
-        Debug.Log("vibration low");
+     //   Debug.Log("vibration low");
         HapticsSystem.Vibrate(presetLowStatic);
     }
 
     public static void VibMed(object sender)
     {
-        Debug.Log("vibration Med");
+     //   Debug.Log("vibration Med");
         HapticsSystem.Vibrate(presetMedStatic);
     }
 
     public static void VibHi(object sender)
     {
-        Debug.Log("vibration Hi");
+     //   Debug.Log("vibration Hi");
         HapticsSystem.Vibrate(presetHiStatic);
     }
 
     public static void VibrationStrong()
     {
-        Debug.Log("vibration Strong");
+     //   Debug.Log("vibration Strong");
         Handheld.Vibrate();
     }
 }
