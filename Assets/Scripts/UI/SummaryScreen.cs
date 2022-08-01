@@ -14,7 +14,7 @@ public class SummaryScreen : MonoBehaviour
         switch(answer)
         {
             case Answer.Fail:
-                LevelFail();
+               Invoke("LevelFail",_timeActivatePanel );
                 break;
             case Answer.Win:
                 LevelWin();
