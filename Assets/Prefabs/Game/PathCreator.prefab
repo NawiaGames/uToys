@@ -156,7 +156,7 @@ MonoBehaviour:
   _distanceRaylway: 0.2
   _gameObjectPlank: {fileID: 315671502329288418, guid: 3a1433ea7c7fb5747b65ec44d98af8a5,
     type: 3}
-  _distancePlank: 0.2
+  _distancePlank: 0.5
   _combineMeshe: {fileID: 1387698767}
   _pathCreator: {fileID: 8831499776988268051}
 --- !u!114 &1387698767
