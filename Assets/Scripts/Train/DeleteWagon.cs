@@ -21,6 +21,12 @@ public class DeleteWagon : MonoBehaviour
             _moveTrain.Wagons.Last().AddComponent<LastWagon>();
         
         if (_moveTrain.Wagons.Count != 0) return;
+        
+        TheEndGame();
+    }
+
+    private void TheEndGame()
+    {
         _moveTrain.StopTrain();
         EventManager.OnOpenedSummary(Answer.Fail);
     }

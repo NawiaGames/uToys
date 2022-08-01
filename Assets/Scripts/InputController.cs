@@ -73,7 +73,11 @@ public class InputController : MonoBehaviour
     {
         _currentSelectObject = _raycast.StartRaycast();
         if (_currentSelectObject != null)
+        {
             _moveSelectedObject.SetSelectObject(_currentSelectObject);
+            HapticManager.VibLo(this);
+        }
+
     }
 
     private void SetObjects()
@@ -99,7 +103,7 @@ public class InputController : MonoBehaviour
         _currentSelectObject.gameObject.SetActive(false);
         _cameraFollow.UpdatePositionAndRotationCamera();
         _currentPlatform = null;
-
+        HapticManager.VibLo(this);
         if (MoveTrain.IndexCurrentPath == 0)
             EventManager.OnStopTutorial();
     }

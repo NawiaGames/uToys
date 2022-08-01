@@ -26,11 +26,13 @@ public class SummaryScreen : MonoBehaviour
 
     private void LevelFail()
     {
+        HapticManager.VibrationStrong();
         _failPanel.ActivatePanel();
     }
 
     private void LevelWin()
     {
+        HapticManager.VibMed(this);
         _winPanel.ActivatePanel();
     }
 
