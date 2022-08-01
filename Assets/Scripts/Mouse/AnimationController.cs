@@ -45,8 +45,5 @@ public class AnimationController : MonoBehaviour
         }
         
         _trainController.EndLevel();
-        
-        if (selectObject.Answer == Answer.Fail)
-            _trainController.DeleteLastWagon();
     }
 }

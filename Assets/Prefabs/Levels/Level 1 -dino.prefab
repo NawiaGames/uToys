@@ -5274,30 +5274,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b73df6e21332e47b474365080d8c86, type: 3}
---- !u!1 &8979426876504087952 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8763323566353450668, guid: 35b73df6e21332e47b474365080d8c86,
-    type: 3}
-  m_PrefabInstance: {fileID: 360500664701393724}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3474626181732612816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8979426876504087952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &450187539529367903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7065,7 +7041,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _outline
       value: 
-      objectReference: {fileID: 3474626181732612816}
+      objectReference: {fileID: 0}
     - target: {fileID: 6952260469254071412, guid: fd036ef289dadf143b49452d5eb73738,
         type: 3}
       propertyPath: m_LocalPosition.x

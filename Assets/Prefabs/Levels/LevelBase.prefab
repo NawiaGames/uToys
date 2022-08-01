@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1984772481905232232}
   - component: {fileID: 4959341390117586100}
   - component: {fileID: 1774151200341556563}
+  - component: {fileID: 8760195572046560242}
   m_Layer: 0
   m_Name: AnimationModel
   m_TagString: Untagged
@@ -106,6 +107,18 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &8760195572046560242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883537521660826979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771d9c6bbcda5924f928059bec5175c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750262794707605941
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,9 +174,6 @@ MonoBehaviour:
   _animator: {fileID: 4959341390117586100}
   _selectObjects: {fileID: 3046257327832979312}
   _transformSetToPlace: {fileID: 8905638118710732788}
-  _outline: {fileID: 0}
-  _colorOutline: {r: 0, g: 1, b: 0, a: 0.29803923}
-  _widthOutline: 3
   _lights: {fileID: 4889005427182052656}
   _platform: {fileID: 3593945313677053333}
 --- !u!1 &1750262794743508770

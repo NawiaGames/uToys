@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class DeleteWagon : MonoBehaviour
     }
 
     [ContextMenu("DeleteWagon")]
-    public void DeleteLastWagon()
+    private void DeleteLastWagon()
     {
         _moveTrain.Wagons.Last().Explosion();
         _moveTrain.Wagons.Remove(_moveTrain.Wagons.Last());
@@ -29,5 +30,15 @@ public class DeleteWagon : MonoBehaviour
     {
         _moveTrain.StopTrain();
         EventManager.OnOpenedSummary(Answer.Fail);
+    }
+
+    private void OnEnable()
+    {
+        EventManager.DeleteWagon += DeleteLastWagon;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.DeleteWagon -= DeleteLastWagon;
     }
 }

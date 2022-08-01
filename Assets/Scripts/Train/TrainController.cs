@@ -28,8 +28,6 @@ public class TrainController : MonoBehaviour
             ActivateTutorial();
     }
 
-    public void DeleteLastWagon() => _deleteWagon.DeleteLastWagon();
-
     public void BeginLevel()
     {
         _particleSystemSmoke.ReduceParticles();
