@@ -1,38 +1,49 @@
 using PathCreation;
 using UnityEngine;
+using static PathCreation.EndOfPathInstruction;
 
-[RequireComponent(typeof(Level))]
 public class SpawnRailRoad : MonoBehaviour
 {
-    [SerializeField] private GameObject _gameObjectRail;
-    [SerializeField] private float _distance = 0.05f;
-    [SerializeField] private CombineMeshe _combineMeshe; 
+    [Header("Railway")]
+    [SerializeField] private GameObject _gameObjectRailway;
+    [SerializeField] private float _distanceRaylway = 0.05f;
+    [Header("Plank")] [SerializeField] private GameObject _gameObjectPlank;
+    [SerializeField] private float _distancePlank = 0.1f; 
+    [Space]
+    [SerializeField] private CombineMeshe _combineMeshe;
+    [SerializeField] private PathCreator _pathCreator;
 
-    private Level _level;
-    private float _distanceTravelled;
+    private float _distanceTravelledRailway;
+    private float _distanceTravelledPlank; 
 
-    private void Start()
+    public PathCreator PathCreator => _pathCreator; 
+
+    public void Spawn()
     {
-        _level = GetComponent<Level>();
-        Spawn();
-        _combineMeshe.Combine();
-    }
-
-    private void Spawn()
-    {
-        var oldPosition = Vector3.zero;
+        var oldPositionRailway = Vector3.zero;
         
         while (true)
         {
-            _distanceTravelled += _distance;
-            var position = _level.PathCreator.path.GetPointAtDistance(_distanceTravelled, EndOfPathInstruction.Stop);
-            var rotation = _level.PathCreator.path.GetRotationAtDistance(_distanceTravelled,  EndOfPathInstruction.Stop);
-            if (oldPosition == position)
+            _distanceTravelledRailway += _distanceRaylway;
+            _distanceTravelledPlank += _distancePlank; 
+            
+            var positionRailway = _pathCreator.path.GetPointAtDistance(_distanceTravelledRailway, Stop);
+            var rotationRailway = _pathCreator.path.GetRotationAtDistance(_distanceTravelledRailway,  Stop);
+            
+            var positionPlank = _pathCreator.path.GetPointAtDistance(_distanceTravelledPlank, Stop);
+           var rotationPlank = _pathCreator.path.GetRotationAtDistance(_distanceTravelledPlank,  Stop);
+            
+            if (oldPositionRailway == positionRailway)
             {
                 break;
             }
-            Instantiate(_gameObjectRail, position, rotation, _combineMeshe.transform);
-            oldPosition = position; 
+            
+            Instantiate(_gameObjectRailway, positionRailway, rotationRailway, _combineMeshe.transform);
+            Instantiate(_gameObjectPlank, positionPlank, rotationPlank, _combineMeshe.transform);
+
+            oldPositionRailway = positionRailway; 
         }
+        
+        _combineMeshe.Combine();
     }
 }

@@ -6,7 +6,7 @@ public class CreatorLevel : MonoBehaviour
 {
     [SerializeField] private TrainController _trainController;
     [SerializeField] private Level[] _levels;
-    [SerializeField] private PathCreator _pathCreator; 
+    [SerializeField] private SpawnRailRoad _spawnRailRoad; 
     
     private Level[] _levelsContainer;
     private PathCreator[] _levelsPathCreator;
@@ -27,7 +27,8 @@ public class CreatorLevel : MonoBehaviour
         CreateLevel(size);
         CreatePath(size);
 
-        _trainController.MoveTrain.SetPathCreator(_pathCreator);
+        _trainController.MoveTrain.SetPathCreator(_spawnRailRoad.PathCreator);
+        _spawnRailRoad.Spawn();
     }
 
     private void CreateLevel(int size)
@@ -68,6 +69,6 @@ public class CreatorLevel : MonoBehaviour
         {
             GlobalNormalsAngle = 90
         };
-        _pathCreator.bezierPath = bezierPath;
+        _spawnRailRoad.PathCreator.bezierPath = bezierPath;
     }
 }

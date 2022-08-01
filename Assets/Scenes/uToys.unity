@@ -398,6 +398,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1387698766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1387698766, guid: fe236d87ac9f5ec448271dc1d297c49d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1387698763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc3f6a4492abff489c4471562db1c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1401627583 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8287955528859007218, guid: 9d9ffc5571ada034fb55ed7a4b34a238,
@@ -965,6 +977,11 @@ PrefabInstance:
       propertyPath: _pathCreator
       value: 
       objectReference: {fileID: 1387698764}
+    - target: {fileID: 7169228983714908380, guid: cd1dca9a10ea1634e82b7adb823fe1d6,
+        type: 3}
+      propertyPath: _spawnRailRoad
+      value: 
+      objectReference: {fileID: 1387698766}
     - target: {fileID: 7169228983714908380, guid: cd1dca9a10ea1634e82b7adb823fe1d6,
         type: 3}
       propertyPath: _trainController

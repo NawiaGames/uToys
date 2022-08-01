@@ -23,10 +23,10 @@ public class CombineMeshe : MonoBehaviour
         }
         
         var meshFilter = GetComponent<MeshFilter>();
-        meshFilter.mesh = new Mesh();
-        // {
-        //     indexFormat = UnityEngine.Rendering.IndexFormat.UInt32
-        // };
+        meshFilter.mesh = new Mesh()
+        {
+            indexFormat = UnityEngine.Rendering.IndexFormat.UInt32
+        };
         meshFilter.mesh.CombineMeshes(combine);
         myTransform.gameObject.SetActive(true);
         
