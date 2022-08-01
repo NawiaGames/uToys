@@ -1002,6 +1002,7 @@ MonoBehaviour:
   _failPanel: {fileID: 3751553740018752756}
   _winPanel: {fileID: 3751553739116935669}
   _kingPanel: {fileID: 3751553739986113089}
+  _timeActivatePanel: 1
 --- !u!1 &3751553738867364671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,9 +1569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546f3d30129087e47a01b95e40f6f80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelDebugMenu: {fileID: 0}
-  _managerUIPanel: {fileID: 3751553739936090239}
-  _levelsLoad: {fileID: 0}
 --- !u!114 &3751553739936090239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,7 +1582,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _summaryScreen: {fileID: 8426774100828084453}
-  _levelPanel: {fileID: 0}
 --- !u!114 &3751553739936090238
 MonoBehaviour:
   m_ObjectHideFlags: 0

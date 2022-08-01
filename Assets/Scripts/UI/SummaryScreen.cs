@@ -6,6 +6,7 @@ public class SummaryScreen : MonoBehaviour
     [SerializeField] private UIPanel _failPanel;
     [SerializeField] private UIPanel _winPanel;
     [SerializeField] private UIPanel _kingPanel;
+    [SerializeField] private float _timeActivatePanel = 0.5f; 
 
 
     public void OpenPanel(Answer answer)
@@ -33,6 +34,12 @@ public class SummaryScreen : MonoBehaviour
     private void LevelWin()
     {
         HapticManager.VibMed(this);
+        EventManager.OnPlayParticleSystemWin();
+        Invoke("ActivateWinPanel", _timeActivatePanel);
+    }
+
+    private void ActivateWinPanel()
+    {
         _winPanel.ActivatePanel();
     }
 
