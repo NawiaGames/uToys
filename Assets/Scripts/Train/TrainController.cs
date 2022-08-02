@@ -4,7 +4,6 @@ using UnityEngine;
 public class TrainController : MonoBehaviour
 {
     [SerializeField] private MoveTrain _moveTrain;
-    [SerializeField] private DeleteWagon _deleteWagon;
     [SerializeField] private CreatorLevel _creatorLevel;
     [SerializeField] private CameraConstantWidth _cameraConstantWidth;
     [SerializeField] private float _waitTimeStarTrain = 1f;

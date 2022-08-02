@@ -18,5 +18,11 @@ public class TriggerTrain : MonoBehaviour
             _trainController.MoveTrain.ReduceMinSpeed();
             _trainController.EnableVirtualCamera();
         }
+
+        var nextLevelBox = other.GetComponent<NextLevelBox>();
+        if (nextLevelBox != null)
+        {
+            _trainController.MoveTrain.IncreaseIndexCurrentPath();
+        }
     }
 }

@@ -106,8 +106,6 @@ public class MoveTrain : MonoBehaviour
         if (_wagons.Count >= 1)
         {
             _isStopTrain = false;
-            _indexCurrentPath++;
-            IndexCurrentPath = _indexCurrentPath;
         }
         IncreaseMaxSpeed(); 
     } 
@@ -143,6 +141,12 @@ public class MoveTrain : MonoBehaviour
             yield return null;
             _currentSpeed += Time.deltaTime * _speedChange; 
         }
+    }
+
+    public void IncreaseIndexCurrentPath()
+    {
+        _indexCurrentPath ++; 
+        IndexCurrentPath = _indexCurrentPath;
     }
     
 }
