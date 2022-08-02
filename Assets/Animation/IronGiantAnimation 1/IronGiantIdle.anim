@@ -434,7 +434,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 9.542738, y: -0.000000050912302, z: 0.0000009619675}
+        value: {x: 9.543, y: -0.178, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -2053,7 +2053,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 9.542738
+        value: 9.543
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2072,7 +2072,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.000000050912302
+        value: -0.178
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2091,7 +2091,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.0000009619675
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2524,7 +2524,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: ironGiant/arm.001/Circle.013
+    path: ironGiant/arm.001/forearm/palm1/palm2/Circle.007/Circle.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2534,7 +2534,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: ironGiant/arm.001/Circle.013
+    path: ironGiant/arm.001/forearm/palm1/palm2/Circle.007/Circle.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2544,7 +2544,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: ironGiant/arm.001/Circle.013
+    path: ironGiant/arm.001/forearm/palm1/palm2/Circle.007/Circle.004
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2734,7 +2734,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: ironGiant/arm.001/forearm/palm1/palm2/Circle.007/Circle.004
+    path: ironGiant/arm.001/Circle.013
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2744,7 +2744,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: ironGiant/arm.001/forearm/palm1/palm2/Circle.007/Circle.004
+    path: ironGiant/arm.001/Circle.013
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -2754,7 +2754,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: ironGiant/arm.001/forearm/palm1/palm2/Circle.007/Circle.004
+    path: ironGiant/arm.001/Circle.013
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
