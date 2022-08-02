@@ -23,7 +23,7 @@ public class AnimationController : MonoBehaviour
     private IEnumerator WaitEndAnimation(SelectObject selectObject)
     {
         IsPlayingAnimation = true; 
-        Debug.Log("start animation");
+   //     Debug.Log("Start animation");
         
         switch (selectObject.Answer)
         {

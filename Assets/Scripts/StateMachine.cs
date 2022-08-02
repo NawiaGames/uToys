@@ -6,6 +6,6 @@ public class StateMachine : StateMachineBehaviour
     {
         AnimationController.IsPlayingAnimation = false;
         animator.enabled = false;
-        Debug.Log("End Animation");
+//        Debug.Log("End Animation");
     }
 }

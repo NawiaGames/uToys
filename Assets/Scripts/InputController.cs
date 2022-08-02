@@ -104,7 +104,7 @@ public class InputController : MonoBehaviour
         _cameraFollow.UpdatePositionAndRotationCamera();
         _currentPlatform = null;
         HapticManager.VibLo(this);
-        if (MoveTrain.IndexCurrentPath == 0)
+      //  if (MoveTrain.IndexCurrentPath == 0)
             EventManager.OnStopTutorial();
     }
 

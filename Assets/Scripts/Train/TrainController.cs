@@ -9,7 +9,7 @@ public class TrainController : MonoBehaviour
     [SerializeField] private CameraConstantWidth _cameraConstantWidth;
     [SerializeField] private float _waitTimeStarTrain = 1f;
 
-    private bool _isFirstStartTutorial = true;
+    private bool _isStartTutorial = true;
     private ParticleSystemSmoke _particleSystemSmoke;
 
     public MoveTrain MoveTrain => _moveTrain;
@@ -24,13 +24,14 @@ public class TrainController : MonoBehaviour
     {
         if (!_moveTrain.IsStopTrain)
             _moveTrain.MoveWagonsAndHead();
-        else if (MoveTrain.IndexCurrentPath == 0 && _isFirstStartTutorial)
+        else if (_isStartTutorial) // if (MoveTrain.IndexCurrentPath == 0 && _isFirstStartTutorial)
             ActivateTutorial();
     }
 
     public void BeginLevel()
     {
         _particleSystemSmoke.ReduceParticles();
+        _isStartTutorial = true;
     }
 
     public void EnableVirtualCamera()
@@ -55,6 +56,7 @@ public class TrainController : MonoBehaviour
 
     private void ActivateTutorial()
     {
+//        Debug.Log("ActivateTutorial");
         var selectObject = _creatorLevel.Levels[MoveTrain.IndexCurrentPath].SelectObjects.SelectObjectsGame;
         var positions = new Vector3[selectObject.Length];
         for (var i = 0; i < positions.Length; i++)
@@ -62,6 +64,6 @@ public class TrainController : MonoBehaviour
         var positionDragDrop = _creatorLevel.Levels[MoveTrain.IndexCurrentPath].TransformSetToPlace.position;
         EventManager.OnActivatedTutorial(positions, positionDragDrop);
 
-        _isFirstStartTutorial = false;
+        _isStartTutorial = false;
     }
 }

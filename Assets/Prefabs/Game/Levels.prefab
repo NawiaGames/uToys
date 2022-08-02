@@ -51,6 +51,5 @@ MonoBehaviour:
   - {fileID: 8945751973174919146, guid: 85bfbed156bf40d458d694b95a10d795, type: 3}
   - {fileID: 8945751973174919146, guid: 4393e815057f9d0449fdd21ff9602d19, type: 3}
   - {fileID: 8945751973174919146, guid: f9df8118bd2450a49ab949d2ba323f00, type: 3}
-  - {fileID: 8945751973174919146, guid: f9df8118bd2450a49ab949d2ba323f00, type: 3}
   - {fileID: 8945751973174919146, guid: de41ef6f076248447860ebb0156c83e1, type: 3}
-  _pathCreator: {fileID: 0}
+  _spawnRailRoad: {fileID: 0}
