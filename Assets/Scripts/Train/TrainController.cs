@@ -51,6 +51,14 @@ public class TrainController : MonoBehaviour
         Invoke("StartTrain", _waitTimeStarTrain);
     }
 
+    public void EnableAndDisableLevel()
+    {
+        if (MoveTrain.IndexCurrentPath + 3 >= _creatorLevel.Levels.Length) return;
+        if (MoveTrain.IndexCurrentPath != 0)
+            _creatorLevel.Levels[MoveTrain.IndexCurrentPath - 1].gameObject.SetActive(false);
+        _creatorLevel.Levels[MoveTrain.IndexCurrentPath + 3].gameObject.SetActive(true);
+    }
+
     private void StartTrain() => MoveTrain.StartTrain();
 
     private void ActivateTutorial()

@@ -6,11 +6,11 @@ public class CreatorLevel : MonoBehaviour
 {
     [SerializeField] private TrainController _trainController;
     [SerializeField] private Level[] _levels;
-    [SerializeField] private SpawnRailRoad _spawnRailRoad; 
-    
+    [SerializeField] private SpawnRailRoad _spawnRailRoad;
+
     private Level[] _levelsContainer;
     private PathCreator[] _levelsPathCreator;
-    private List<Vector3> _listVectorsPath; 
+    private List<Vector3> _listVectorsPath;
     public Level[] Levels => _levelsContainer;
 
     private void Awake()
@@ -23,7 +23,7 @@ public class CreatorLevel : MonoBehaviour
         var size = _levels.Length;
         _levelsContainer = new Level[size];
         _levelsPathCreator = new PathCreator[size];
-        
+
         CreateLevel(size);
         CreatePath(size);
 
@@ -36,19 +36,19 @@ public class CreatorLevel : MonoBehaviour
         var thisTransform = gameObject.transform;
         _levelsContainer[0] = Instantiate(_levels[0], thisTransform);
         _levelsPathCreator[0] = _levelsContainer[0].PathCreator;
-        
+
         for (var i = 1; i < size; i++)
         {
             var indexPosition = _levelsContainer[i - 1].PathCreator.path.NumPoints - 1;
             var position = _levelsContainer[i - 1].PathCreator.path.GetPoint(indexPosition);
             position.x = 0;
-            position.y = 0; 
-         //   var rotation = _levelsContainer[i - 1].PathCreator.path.GetRotation(0.99f);
+            position.y = 0;
+            //   var rotation = _levelsContainer[i - 1].PathCreator.path.GetRotation(0.99f);
             _levelsContainer[i] = Instantiate(_levels[i], position, Quaternion.identity, thisTransform);
-
+            if (i != 1 && i != 2)
+                _levelsContainer[i].gameObject.SetActive(false);
             _levelsPathCreator[i] = _levelsContainer[i].PathCreator;
         }
-
     }
 
     private void CreatePath(int size)

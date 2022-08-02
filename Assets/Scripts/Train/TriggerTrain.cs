@@ -22,6 +22,7 @@ public class TriggerTrain : MonoBehaviour
         var nextLevelBox = other.GetComponent<NextLevelBox>();
         if (nextLevelBox != null)
         {
+            _trainController.EnableAndDisableLevel();
             _trainController.MoveTrain.IncreaseIndexCurrentPath();
         }
     }
