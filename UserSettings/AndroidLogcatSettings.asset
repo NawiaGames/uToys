@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R58MA6RMCDJ",
+    "m_SelectedDeviceId": "a276d0db7d23",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "a276d0db7d23",
+        "name": "com.nawiagames.utoys",
+        "processId": 9621,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -30,6 +30,12 @@
             "deviceId": "R58MA6RMCDJ",
             "name": "com.sec.android.app.launcher",
             "processId": 5294,
+            "exited": false
+        },
+        {
+            "deviceId": "a276d0db7d23",
+            "name": "com.nawiagames.utoys",
+            "processId": 9621,
             "exited": false
         }
     ],
